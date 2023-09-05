@@ -6,7 +6,7 @@ import { MoonLoader } from "react-spinners";
 export default function Login() {
   if (typeof window !== "undefined") {
     if (localStorage.idUser) {
-      location.replace("/post/all");
+      // location.replace("/post/all");
     }
   }
 
@@ -39,7 +39,7 @@ export default function Login() {
       if (typeof window !== "undefined") {
         localStorage.setItem("idUser", user.id);
         // location.reload();
-        location.replace("/post/all");
+        // location.replace("/post/all");
       }
     } else {
       setLoading(false);

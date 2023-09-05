@@ -36,7 +36,7 @@ export default function DynamicPart() {
           className=" bg-red-600 rounded text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
           onClick={() => {
             localStorage.clear();
-            location.replace("/post/all");
+            // location.replace("/post/all");
           }}
         >
           LogOut
