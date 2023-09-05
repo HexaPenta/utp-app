@@ -1,0 +1,69 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String       @id @default(uuid())
+  name        String?      @db.VarChar(50)
+  surname     String?      @db.VarChar(50)
+  email       String?      @db.VarChar(25)
+  password    String?      @db.VarChar(50)
+  headquarter String?      @db.VarChar(50)
+  cycle       String?      @db.VarChar(2)
+  carrer      String?      @db.VarChar(50)
+  Access      Access?
+  postDetail  postDetail[]
+}
+
+//node 1 - Integrated for: User
+model Access {
+  id             String  @id @default(uuid())
+  about          Boolean @default(false)
+  posts          Boolean @default(false)
+  dashboard      Boolean @default(false)
+  dashboardUsers Boolean @default(false)
+  dashboardPosts Boolean @default(false)
+  idUser         String? @unique
+  User           User?   @relation(fields: [idUser], references: [id])
+}
+
+model postScope {
+  id                    String  @id @default(uuid())
+  architecture          Boolean @default(false)
+  industrialEngineering Boolean @default(false)
+  systemsEngineering    Boolean @default(false)
+  civilEngineering      Boolean @default(false)
+  idPost                String? @unique
+  Post                  Post?   @relation(fields: [idPost], references: [id])
+}
+
+//node 2 - Integrated for: postScope
+model Post {
+  id          String       @id @default(uuid())
+  title       String       @db.VarChar(50)
+  description String       @db.VarChar(50)
+  image       String       @db.VarChar(50)
+  postDetail  postDetail[]
+  postScope   postScope?
+}
+
+//node 3 - Integrated for: Post - User
+model postDetail {
+  // id     String   @id @default(uuid())
+  idUser String
+  User   User    @relation(fields: [idUser], references: [id])
+  idPost String
+  Post   Post    @relation(fields: [idPost], references: [id])
+  iLove  Boolean?
+  iLike  Boolean?
+  
+  @@id([idUser,idPost])
+}
