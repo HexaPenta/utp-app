@@ -9,12 +9,12 @@ export async function GET() {
 
   const rawData = await DataBaseInteraction.post.create({
     data: {
-      title: "Agost 7 ",
-      description: " Hi everyone",
+      title: "April 21 ",
+      description: " What's happend",
       image: "dataImage8168799.type(url)",
       postScope: {
         create: {
-          civilEngineering: true,
+          industrialEngineering: true,
         },
       },
     },
