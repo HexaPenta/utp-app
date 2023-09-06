@@ -2,19 +2,9 @@
 
 import useSWR from "swr";
 import IsLove from "../components/changeLove/isLove";
-import { useRouter } from "next/navigation";
 
 export default function PostMain({ params }) {
   console.log(params);
-
-  if (
-    params.category !== "architecture" ||
-    params.category !== "civilEngineering" ||
-    params.category !== "industrialEngineering" ||
-    params.category !== "all"
-  ) {
-    useRouter().push("/post/all");
-  }
 
   const idUser =
     typeof window !== "undefined" ? localStorage.getItem("idUser") : null;

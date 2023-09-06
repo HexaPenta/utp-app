@@ -23,6 +23,9 @@ export default function Login() {
 
   async function handleSubmit(event) {
     setLoading(true);
+    //
+    location.replace("/post/all");
+    //
     setNotFound(false);
     event.preventDefault();
     const user = await fetch(
@@ -45,9 +48,6 @@ export default function Login() {
       setLoading(false);
       setNotFound(true);
     }
-    // window.localStorage.idUser = userJSON.id;
-    // window.location.href = "/post";
-    // useRouter().push("/post/all");
   }
   return (
     <div className=" bg-white">

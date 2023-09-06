@@ -23,17 +23,6 @@ export default function IsNotLogin() {
         Posts
       </Link>
 
-      {/* <button className=" bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border">
-        Sign in
-      </button>
-
-      <Link
-        className=" bg-red-600 rounded text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
-        // href="https://www.instagram.com/reels/CwYDETrqej3/"
-        href="/user/form/login"
-      >
-        login
-      </Link> */}
       <DynamicPart />
     </div>
   );
