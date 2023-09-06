@@ -103,10 +103,10 @@ export default function Home() {
           />
         </div>
       </div>
-      <div className=" w-1/2 p-4 pt-0">{children}</div>
+      {/* <div className=" w-1/2 p-4 pt-0">{children}</div> */}
       <div className=" w-1/4 h-fit px-4 py-6 grid grid-col-1 gap-y-12 my-4 ">
         {/* <div className=" bg-yellow-400 w-1/4 h-fit rounded-lg shadow-md px-4 py-6 grid-col-1 gap-y-96 "> */}
-        <img src={UrlImagePortalUTP} alt="" className=" mx-auto" />
+        {/* <img src={UrlImagePortalUTP} alt="" className=" mx-auto" /> */}
         <img
           src="https://instructure-uploads.s3.amazonaws.com/account_94830000000000001/attachments/13474277/utp-canvas.png"
           alt=""
