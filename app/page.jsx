@@ -2,6 +2,7 @@
 // import { useRouter } from "next/navigation";
 
 export default function Home() {
+  location.replace("/post/all");
   // useRouter().push("/post/all");
 
   return (
