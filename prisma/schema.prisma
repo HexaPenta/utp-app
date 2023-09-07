@@ -25,11 +25,11 @@ model User {
   id          String       @id @default(uuid())
   name        String?      @db.VarChar(50)
   surname     String?      @db.VarChar(50)
-  email       String?      @db.VarChar(25)
+  email       String?      @unique @db.VarChar(55)
   password    String?      @db.VarChar(50)
   headquarter String?      @db.VarChar(50)
   cycle       String?      @db.VarChar(2)
-  carrer      String?      @db.VarChar(50)
+  carrer      String?      @db.VarChar(30)
   Access      Access?
   postDetail  postDetail[]
 }
