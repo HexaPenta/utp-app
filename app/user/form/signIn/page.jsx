@@ -38,7 +38,9 @@ export default function SignInSuperUser() {
 
     if (
       typeof isFinally !== "number" &&
-      !isFinally &&
+      typeof data.name !== "undefined" &&
+      typeof data.surname !== "undefined" &&
+      typeof data.carrer !== "undefined" &&
       !Object.keys(error).length
     ) {
       //Here api POST
@@ -56,6 +58,10 @@ export default function SignInSuperUser() {
           } else {
             setIsLoading(false);
           }
+        })
+        .catch(() => {
+          alert("Try again");
+          location.reload();
         });
     }
   }
@@ -67,8 +73,6 @@ export default function SignInSuperUser() {
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              console.log(e.currentTarget.target);
-              // console.log();
             }}
           >
             <div className="border-b border-gray-900/10 pb-12 ">
