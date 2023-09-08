@@ -16,12 +16,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className={localStorage.idUser ? "hidden" : ""}>
+        {/* <div className={localStorage.idUser ? "hidden" : ""}>
           <IsNotLogin />
         </div>
         <div className={!localStorage.idUser ? "hidden" : ""}>
           <IsLogin />
-        </div>
+        </div> */}
         {children}
       </body>
     </html>
