@@ -23,9 +23,6 @@ export default function Login() {
 
   async function handleSubmit(event) {
     setLoading(true);
-    //
-    location.replace("/post/all");
-    //
     setNotFound(false);
     event.preventDefault();
     const user = await fetch(
@@ -41,8 +38,22 @@ export default function Login() {
 
       if (typeof window !== "undefined") {
         localStorage.setItem("idUser", user.id);
-        // location.reload();
-        // location.replace("/post/all");
+        localStorage.setItem("name", user.name);
+        localStorage.setItem("surname", user.surname);
+        localStorage.setItem("email", user.email);
+        localStorage.setItem("password", user.password);
+        localStorage.setItem("headquarter", user.headquarter);
+        localStorage.setItem("cycle", user.cycle);
+        localStorage.setItem("carrer", user.carrer);
+
+        localStorage.setItem("about", user.Access.about);
+        localStorage.setItem("posts", user.Access.posts);
+        localStorage.setItem("dashboard", user.Access.dashboard);
+        localStorage.setItem("dashboardUsers", user.Access.dashboardUsers);
+        localStorage.setItem("dashboardPosts", user.Access.dashboardPosts);
+
+        // location.replace(`/user/${user.id}`);
+        location.replace(`/post/all`);
       }
     } else {
       setLoading(false);

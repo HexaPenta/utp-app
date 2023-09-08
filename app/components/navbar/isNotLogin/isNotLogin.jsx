@@ -1,7 +1,10 @@
 // "use client";
 
 import Link from "next/link";
-import DynamicPart from "./dynamicPart";
+// import DynamicPart from "./dynamicPart";
+
+// const idUser =
+//   typeof window !== "undefined" ? localStorage.getItem("idUser") : "";
 
 export default function IsNotLogin() {
   return (
@@ -23,7 +26,22 @@ export default function IsNotLogin() {
         Posts
       </Link>
 
-      <DynamicPart />
+      {/* <DynamicPart /> */}
+
+      <Link
+        className=" bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
+        href="/user/form/signIn"
+      >
+        Sign in
+      </Link>
+
+      <Link
+        className=" bg-red-600 rounded text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
+        // href="https://www.instagram.com/reels/CwYDETrqej3/"
+        href="/user/form/login"
+      >
+        login
+      </Link>
     </div>
   );
 }
