@@ -13,13 +13,15 @@ const inter = Inter({ subsets: ["latin"] });
 // };
 
 export default function RootLayout({ children }) {
+  const idUser = typeof window !== "undefined" ? localStorage.idUser : "";
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className={localStorage.idUser ? "hidden" : ""}>
+        <div className={idUser ? "hidden" : ""}>
           <IsNotLogin />
         </div>
-        <div className={!localStorage.idUser ? "hidden" : ""}>
+        <div className={!idUser ? "hidden" : ""}>
           <IsLogin />
         </div>
         {children}
