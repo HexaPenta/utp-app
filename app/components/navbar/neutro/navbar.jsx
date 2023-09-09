@@ -1,12 +1,36 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect, useState } from "react";
 // import DynamicPart from "./dynamicPart";
 
-const idUser =
-  typeof window !== "undefined" ? localStorage.getItem("idUser") : "";
-
 export default function Navbar() {
+  // if (typeof window !== "undefined") {
+  //   // var p = window.localStorage;
+  // }
+  // const [idUser, setIdUser] = useState(p.getItem("idUser"));
+  const [idUser, setIdUser] = useState(false);
+
+  // if (typeof window !== "undefined") {
+  //   // if (typeof localStorage.idUser === "string") {
+  //   //   setIdUser(true);
+  //   // } else {
+  //   //   setIdUser(false);
+  //   // }
+  //   setIdUser(localStorage.idUser);
+  // }
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      // if (typeof localStorage.idUser === "string") {
+      //   setIdUser(true);
+      // } else {
+      //   setIdUser(false);
+      // }
+      setIdUser(localStorage.idUser);
+    }
+  }, []);
+
   return (
     <div className=" grid grid-cols-10 bg-indigo-100 gap-5 py-6 px-4 text-center">
       <button className=" box-border">
@@ -30,7 +54,7 @@ export default function Navbar() {
 
       <Link
         className={
-          !idUser
+          idUser
             ? "hidden"
             : " bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
         }
@@ -41,7 +65,7 @@ export default function Navbar() {
 
       <Link
         className={
-          idUser
+          !idUser
             ? "hidden"
             : " bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
         }
@@ -60,7 +84,7 @@ export default function Navbar() {
 
       <Link
         className={
-          Boolean(idUser)
+          idUser
             ? "hidden"
             : " block bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
         }
@@ -71,9 +95,9 @@ export default function Navbar() {
 
       <button
         className={
-          Boolean(idUser)
-            ? " block bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
-            : " hidden"
+          !idUser
+            ? "hidden"
+            : " block bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
         }
         onClick={() => {
           localStorage.clear();
