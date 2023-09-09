@@ -9,7 +9,7 @@ export default function Navbar() {
   //   // var p = window.localStorage;
   // }
   // const [idUser, setIdUser] = useState(p.getItem("idUser"));
-  const [idUser, setIdUser] = useState(false);
+  const [idUser, setIdUser] = useState("");
 
   // if (typeof window !== "undefined") {
   //   // if (typeof localStorage.idUser === "string") {
@@ -27,7 +27,7 @@ export default function Navbar() {
       // } else {
       //   setIdUser(false);
       // }
-      setIdUser(localStorage.idUser);
+      setIdUser(window.localStorage.idUser);
     }
   }, []);
 
