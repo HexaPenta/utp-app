@@ -26,7 +26,7 @@ export default function Login() {
     setNotFound(false);
     event.preventDefault();
     const user = await fetch(
-      `http://localhost:3000/user/form/login/api?email=${data.email}&password=${data.password}`
+      `/user/form/login/api?email=${data.email}&password=${data.password}`
     )
       .then((r) => r.json())
       .catch(() => {
