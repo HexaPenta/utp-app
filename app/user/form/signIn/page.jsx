@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Validations from "./validations";
 import { MoonLoader } from "react-spinners";
+import Link from "next/link";
 
 export default function SignInSuperUser() {
   const [data, setData] = useState({
@@ -361,9 +362,12 @@ export default function SignInSuperUser() {
 
             {!IsLoading ? (
               <div className="mt-6 flex items-center justify-end gap-x-6">
-                <button className="text-sm font-semibold leading-6 text-gray-900">
+                <Link
+                  className="text-sm font-semibold leading-6 text-gray-900"
+                  href="/post/all"
+                >
                   Cancel
-                </button>
+                </Link>
                 <button
                   className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white  hover:bg-indigo-500 disabled:bg-indigo-200"
                   name="save"

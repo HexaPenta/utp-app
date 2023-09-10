@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { MoonLoader } from "react-spinners";
 
@@ -24,7 +25,7 @@ export default function Login() {
   async function handleSubmit(event) {
     setLoading(true);
     setNotFound(false);
-    event.preventDefault();
+    // event.preventDefault();
     const user = await fetch(
       `/user/form/login/api?email=${data.email}&password=${data.password}`
     )
@@ -64,7 +65,11 @@ export default function Login() {
     <div className=" bg-white">
       <div className="mx-auto  px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
         <div className="  mx-auto  max-w-2xl dark:bg-slate-100 rounded-md p-11">
-          <form onSubmit={handleSubmit}>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
             <div className="border-b border-gray-900/10 pb-12 ">
               <h2 className="text-base font-semibold leading-7 text-gray-900">
                 Login
@@ -108,11 +113,17 @@ export default function Login() {
             {!loading ? (
               <div className=" flex flex-col items-end gap-y-4 mt-6">
                 <div className="flex gap-x-3">
-                  <button className=" font-semibold text-sm text-gray-800">
+                  <Link
+                    className=" font-semibold text-sm text-gray-800 py-2"
+                    href="/post/all"
+                  >
                     Cancel
-                  </button>
+                  </Link>
 
-                  <button className="text-right w-fit rounded bg-indigo-600 hover:bg-indigo-500 px-3 py-2 font-semibold text-sm text-white">
+                  <button
+                    className="text-right w-fit rounded bg-indigo-600 hover:bg-indigo-500 px-3 py-2 font-semibold text-sm text-white"
+                    onClick={handleSubmit}
+                  >
                     Access
                   </button>
                 </div>
