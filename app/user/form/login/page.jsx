@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { MoonLoader } from "react-spinners";
 
@@ -24,9 +25,9 @@ export default function Login() {
   async function handleSubmit(event) {
     setLoading(true);
     setNotFound(false);
-    event.preventDefault();
+    // event.preventDefault();
     const user = await fetch(
-      `http://localhost:3000/user/form/login/api?email=${data.email}&password=${data.password}`
+      `/user/form/login/api?email=${data.email}&password=${data.password}`
     )
       .then((r) => r.json())
       .catch(() => {
@@ -38,22 +39,37 @@ export default function Login() {
 
       if (typeof window !== "undefined") {
         localStorage.setItem("idUser", user.id);
-        // location.reload();
-        // location.replace("/post/all");
+        localStorage.setItem("name", user.name);
+        localStorage.setItem("surname", user.surname);
+        localStorage.setItem("email", user.email);
+        localStorage.setItem("password", user.password);
+        localStorage.setItem("headquarter", user.headquarter);
+        localStorage.setItem("cycle", user.cycle);
+        localStorage.setItem("carrer", user.carrer);
+
+        localStorage.setItem("about", user.Access.about);
+        localStorage.setItem("posts", user.Access.posts);
+        localStorage.setItem("dashboard", user.Access.dashboard);
+        localStorage.setItem("dashboardUsers", user.Access.dashboardUsers);
+        localStorage.setItem("dashboardPosts", user.Access.dashboardPosts);
+
+        // location.replace(`/user/${user.id}`);
+        location.replace(`/post/all`);
       }
     } else {
       setLoading(false);
       setNotFound(true);
     }
-    // window.localStorage.idUser = userJSON.id;
-    // window.location.href = "/post";
-    // useRouter().push("/post/all");
   }
   return (
     <div className=" bg-white">
       <div className="mx-auto  px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
         <div className="  mx-auto  max-w-2xl dark:bg-slate-100 rounded-md p-11">
-          <form onSubmit={handleSubmit}>
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+            }}
+          >
             <div className="border-b border-gray-900/10 pb-12 ">
               <h2 className="text-base font-semibold leading-7 text-gray-900">
                 Login
@@ -97,11 +113,17 @@ export default function Login() {
             {!loading ? (
               <div className=" flex flex-col items-end gap-y-4 mt-6">
                 <div className="flex gap-x-3">
-                  <button className=" font-semibold text-sm text-gray-800">
+                  <Link
+                    className=" font-semibold text-sm text-gray-800 py-2"
+                    href="/post/all"
+                  >
                     Cancel
-                  </button>
+                  </Link>
 
-                  <button className="text-right w-fit rounded bg-indigo-600 hover:bg-indigo-500 px-3 py-2 font-semibold text-sm text-white">
+                  <button
+                    className="text-right w-fit rounded bg-indigo-600 hover:bg-indigo-500 px-3 py-2 font-semibold text-sm text-white"
+                    onClick={handleSubmit}
+                  >
                     Access
                   </button>
                 </div>
@@ -110,7 +132,7 @@ export default function Login() {
                 </button>
                 {notFound ? (
                   <h3 className=" text-red-600 font-medium text-sm">
-                    Error-User-not-found
+                    Error-User-not-found - - - - -
                   </h3>
                 ) : null}
               </div>

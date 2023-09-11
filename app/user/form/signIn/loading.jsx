@@ -1,6 +1,4 @@
-"use client";
-
-export default function Landing() {
+export default function Loading() {
   return (
     <div className=" bg-white">
       <div className=" w-1/2 mx-auto  py-24">

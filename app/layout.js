@@ -1,6 +1,10 @@
+// "use client";
+
 import "./globals.css";
 import { Inter } from "next/font/google";
-import IsNotLogin from "./components/navbar/isNotLogin/isNotLogin";
+// import IsNotLogin from "./components/navbar/isNotLogin/isNotLogin";
+// import IsLogin from "./components/navbar/isLogin/isLogin";
+import Navbar from "./components/navbar/neutro/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -10,10 +14,21 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // const idUser = typeof window !== "undefined" ? localStorage.idUser : "";
+  // if (typeof window !== "undefined") {
+  //   localStorage;
+  // }
+
   return (
     <html lang="en">
       <body className={inter.className}>
-        <IsNotLogin />
+        {/* <div className={localStorage.idUser ? "hidden" : ""}>
+          <IsNotLogin />
+        </div>
+        <div className={!localStorage.idUser ? "hidden" : ""}>
+          <IsLogin />
+        </div> */}
+        <Navbar />
         {children}
       </body>
     </html>

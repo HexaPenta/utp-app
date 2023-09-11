@@ -10,6 +10,9 @@ export async function GET(request) {
       email,
       password,
     },
+    include: {
+      Access: true,
+    },
   });
   const actualUserUnique = actualUser[0];
 

@@ -2,19 +2,9 @@
 
 import useSWR from "swr";
 import IsLove from "../components/changeLove/isLove";
-import { useRouter } from "next/navigation";
 
 export default function PostMain({ params }) {
   console.log(params);
-
-  if (
-    params.category !== "architecture" ||
-    params.category !== "civilEngineering" ||
-    params.category !== "industrialEngineering" ||
-    params.category !== "all"
-  ) {
-    useRouter().push("/post/all");
-  }
 
   const idUser =
     typeof window !== "undefined" ? localStorage.getItem("idUser") : null;
@@ -33,20 +23,20 @@ export default function PostMain({ params }) {
     return (
       <div>
         <div className=" grid grid-cols-6 animate-pulse gap-y-6 gap-x-3 p-4">
-          <div class="h-4 bg-slate-400/70 rounded-lg col-span-full     "></div>
-          <div class="h-4 bg-slate-400/70 rounded-lg col-span-5     "></div>
-          <div class="h-4 bg-slate-400/70 rounded-lg col-span-4     "></div>
-          <div class="h-4 bg-slate-400/70 rounded-lg col-span-2     "></div>
-          <div class="h-40 bg-slate-400/70 rounded-lg col-span-4 col-start-2    "></div>
-          <div class="h-16 bg-slate-400/70 rounded-full col-start-1 w-16    "></div>
+          <div className="h-4 bg-slate-400/70 rounded-lg col-span-full     "></div>
+          <div className="h-4 bg-slate-400/70 rounded-lg col-span-5     "></div>
+          <div className="h-4 bg-slate-400/70 rounded-lg col-span-4     "></div>
+          <div className="h-4 bg-slate-400/70 rounded-lg col-span-2     "></div>
+          <div className="h-40 bg-slate-400/70 rounded-lg col-span-4 col-start-2    "></div>
+          <div className="h-16 bg-slate-400/70 rounded-full col-start-1 w-16    "></div>
         </div>
         <div className=" grid grid-cols-6 animate-pulse gap-y-6 gap-x-3 py-1">
-          <div class="h-4 bg-slate-400/70 rounded-lg col-span-full     "></div>
-          <div class="h-4 bg-slate-400/70 rounded-lg col-span-5     "></div>
-          <div class="h-4 bg-slate-400/70 rounded-lg col-span-4     "></div>
-          <div class="h-4 bg-slate-400/70 rounded-lg col-span-2     "></div>
-          <div class="h-40 bg-slate-400/70 rounded-lg col-span-4 col-start-2    "></div>
-          <div class="h-16 bg-slate-400/70 rounded-full col-start-1 w-16    "></div>
+          <div className="h-4 bg-slate-400/70 rounded-lg col-span-full     "></div>
+          <div className="h-4 bg-slate-400/70 rounded-lg col-span-5     "></div>
+          <div className="h-4 bg-slate-400/70 rounded-lg col-span-4     "></div>
+          <div className="h-4 bg-slate-400/70 rounded-lg col-span-2     "></div>
+          <div className="h-40 bg-slate-400/70 rounded-lg col-span-4 col-start-2    "></div>
+          <div className="h-16 bg-slate-400/70 rounded-full col-start-1 w-16    "></div>
         </div>
       </div>
     );

@@ -1,16 +1,17 @@
 "use client";
 
 import Link from "next/link";
-const idUser =
-  typeof window !== "undefined" ? localStorage.getItem("idUser") : "";
+// const idUser =
+//   typeof window !== "undefined" ? localStorage.getItem("idUser") : "";
 
-export default function DynamicPart() {
+export default function DynamicPart({ idUser }) {
+  console.log("this ", idUser);
   return (
     <>
       {!idUser ? (
         <Link
           className=" bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
-          href="/post/all"
+          href="/user/form/signIn"
         >
           Sign in
         </Link>
@@ -23,7 +24,7 @@ export default function DynamicPart() {
         </Link>
       )}
 
-      {!idUser ? (
+      {!true ? (
         <Link
           className=" bg-red-600 rounded text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
           // href="https://www.instagram.com/reels/CwYDETrqej3/"
@@ -36,7 +37,7 @@ export default function DynamicPart() {
           className=" bg-red-600 rounded text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
           onClick={() => {
             localStorage.clear();
-            // location.replace("/post/all");
+            location.replace("/post/all");
           }}
         >
           LogOut
