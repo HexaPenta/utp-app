@@ -32,6 +32,7 @@ export default function Navbar() {
   }, []);
 
   return (
+    // <div className=" p-6 bg-purple-600">
     <div className=" grid grid-cols-10 bg-indigo-100 gap-5 py-6 px-4 text-center">
       <Link className=" box-border" href="/">
         <img
@@ -108,5 +109,6 @@ export default function Navbar() {
         Logout
       </button>
     </div>
+    // </div>
   );
 }
