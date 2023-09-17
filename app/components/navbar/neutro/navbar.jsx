@@ -41,11 +41,17 @@ export default function Navbar() {
           alt="utp-mainImage"
         />
       </Link>
-      <button className=" bg-red-600 col-start-7 col-span-1 rounded text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border bg-redUTP">
+      <Link
+        className=" bg-red-600 rounded col-span-1 col-end-7 text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
+        href="/"
+      >
+        Home
+      </Link>
+      <button className=" bg-red-600 col-start-7 col-span-1 rounded text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border bg-redUTP">
         About
       </button>
       <Link
-        className=" bg-red-600 rounded col-span-1 text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
+        className=" bg-red-600 rounded col-span-1 text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
         href="/post/all"
       >
         Posts
@@ -57,7 +63,7 @@ export default function Navbar() {
         className={
           idUser
             ? "hidden"
-            : " bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
+            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
         }
         href="/user/form/signIn"
       >
@@ -68,7 +74,7 @@ export default function Navbar() {
         className={
           !idUser
             ? "hidden"
-            : " bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
+            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
         }
         href="/dashboard/users"
       >
@@ -76,7 +82,7 @@ export default function Navbar() {
       </Link>
 
       {/* <Link
-        className=" bg-red-600 rounded text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
+        className=" bg-red-600 rounded text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
         // href="https://www.instagram.com/reels/CwYDETrqej3/"
         href="/user/form/login"
       >
@@ -87,7 +93,7 @@ export default function Navbar() {
         className={
           idUser
             ? "hidden"
-            : " block bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
+            : " block bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
         }
         href="/user/form/login"
       >
@@ -98,12 +104,12 @@ export default function Navbar() {
         className={
           !idUser
             ? "hidden"
-            : " block bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
+            : // : " block bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
+              " block bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
         }
         onClick={() => {
           localStorage.clear();
-          //   location.replace("/post/all");
-          location.reload();
+          location.replace("/post/all");
         }}
       >
         Logout

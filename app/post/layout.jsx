@@ -7,32 +7,32 @@ export default function PostLayout({ children }) {
       <div className=" ">
         <div className=" grid grid-cols-12 bg-indigo-100 gap-5 py-6 px-4 text-center border-t border-gray-400   pb-6 ">
           <Link
-            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-indigo-500 text-sm  font-extrabold font-serif px-3 py-2 box-border text-gray-900"
+            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-sm  font-extrabold font-serif px-3 py-2 box-border text-gray-900"
             href="/post/architecture"
           >
             Architecture
           </Link>
           <Link
-            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-indigo-500 text-sm  font-extrabold font-serif px-3 py-2 box-border text-gray-900"
+            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-sm  font-extrabold font-serif px-3 py-2 box-border text-gray-900"
             href="/post/civilEngineering"
           >
             Civil engineering
           </Link>
           <Link
-            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-indigo-500 text-sm  font-extrabold font-serif px-3 py-2 box-border text-gray-900"
+            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-sm  font-extrabold font-serif px-3 py-2 box-border text-gray-900"
             href="/post/industrialEngineering"
           >
             Industrial engineering
           </Link>
           <Link
-            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-indigo-500 text-sm  font-extrabold font-serif px-3 py-2 box-border text-gray-900"
+            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-sm  font-extrabold font-serif px-3 py-2 box-border text-gray-900"
             href="/post/systemsEngineering"
           >
             Sistems engineering
           </Link>
 
           <Link
-            className=" border-x-2 border-y-2 col-start-10 col-span-3  border-gray-600 rounded hover:bg-indigo-500 text-sm  font-extrabold font-serif px-3 py-2 box-border text-gray-900"
+            className=" border-x-2 border-y-2 col-start-10 col-span-3  border-gray-600 rounded hover:bg-black  hover:text-white text-sm  font-extrabold font-serif px-3 py-2 box-border text-gray-900"
             href="/post/all"
           >
             All

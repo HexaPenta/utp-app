@@ -13,7 +13,7 @@ export default function Validations(data) {
 
   if (!regexEmail.test(data.email))
     errors.email = "Proporcione un email válido";
-  if (data.email.length === 45) errors.email = "Menor a 45 caracteres";
+  if (data.email?.length === 45) errors.email = "Menor a 45 caracteres";
 
   if (data.password?.length < 7)
     errors.password = "Debe tener mínimo 7 caracteres";

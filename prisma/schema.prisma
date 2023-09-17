@@ -39,7 +39,6 @@ model Access {
   id             String  @id @default(uuid())
   about          Boolean @default(false)
   posts          Boolean @default(false)
-  dashboard      Boolean @default(false)
   dashboardUsers Boolean @default(false)
   dashboardPosts Boolean @default(false)
   idUser         String? @unique

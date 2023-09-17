@@ -1,4 +1,3 @@
-// import DataBaseInteraction from "@/prisma";
 import DataBaseInteraction from "@/prisma";
 import { NextResponse } from "next/server";
 
@@ -6,6 +5,9 @@ export async function GET() {
   const allUsers = await DataBaseInteraction.user.findMany({
     include: {
       Access: true,
+    },
+    orderBy: {
+      name: "asc",
     },
   });
 
@@ -18,6 +20,38 @@ export async function DELETE(request) {
   await DataBaseInteraction.user.delete({
     where: {
       id: idUser,
+    },
+  });
+
+  return NextResponse.json({ ok: true });
+}
+
+export async function PUT(request) {
+  const { idUser, initData, Access } = await request.json();
+  const { name, surname, email, password, headquarter, cycle, carrer } =
+    initData;
+  const { about, posts, dashboardPosts, dashboardUsers } = Access;
+
+  await DataBaseInteraction.user.update({
+    where: {
+      id: idUser,
+    },
+    data: {
+      name,
+      surname,
+      email,
+      password,
+      headquarter,
+      cycle,
+      carrer,
+      Access: {
+        update: {
+          about,
+          posts,
+          dashboardPosts,
+          dashboardUsers,
+        },
+      },
     },
   });
 

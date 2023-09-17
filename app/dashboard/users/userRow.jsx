@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 //Necessary ???
 
 import { useState } from "react";
@@ -6,10 +6,11 @@ import Validations from "./validations";
 import { MoonLoader } from "react-spinners";
 
 export default function UserRow({ userValue, setCloneData, cloneData }) {
-  // console.log(userValue);
+  const [userValueClone, setUserValueClone] = useState(userValue);
   const [edit, setEdit] = useState(false);
   const [willBeDeleted, setWillBeDeleted] = useState(false);
   const [loadingDelete, setLoadingDelete] = useState(false);
+  const [loadingUpdate, setLoadingUpdate] = useState(false);
   const [initData, setInitData] = useState({
     name: userValue.name,
     surname: userValue.surname,
@@ -21,7 +22,6 @@ export default function UserRow({ userValue, setCloneData, cloneData }) {
   });
   const [Access, setAccess] = useState({
     about: userValue.Access.about,
-    dashboard: userValue.Access.dashboard,
     dashboardPosts: userValue.Access.dashboardPosts,
     dashboardUsers: userValue.Access.dashboardUsers,
     posts: userValue.Access.posts,
@@ -33,6 +33,13 @@ export default function UserRow({ userValue, setCloneData, cloneData }) {
     SouthLime: "Lima sur",
     "eastLime-SJL": "Lima Este - SJL",
     "eastLime-ATE": "Lima Este - ATE",
+    Arequipa: "Arequipa",
+    Chiclayo: "Chiclayo",
+    Chimbote: "Chimbote",
+    Huancayo: "Huancayo",
+    Ica: "Ica",
+    Piura: "Piura",
+    Trujillo: "Trujillo",
     virtualCampus: "Campus 100% virtual",
   };
   function handleInitData(event) {
@@ -42,106 +49,81 @@ export default function UserRow({ userValue, setCloneData, cloneData }) {
   }
 
   function handleAccess(event) {
-    const { name, value } = event.target;
+    const { name } = event.target;
+    let { value } = event.target;
+    if (value === "false") {
+      value = false;
+    } else {
+      value = true;
+    }
     setAccess({ ...Access, [name]: value });
   }
   return (
     <div>
       {!edit ? (
-        // <div className=" flex divide-x-2 divide-gray-500 text-xs">
-        //   <div className=" grid grid-cols-7 divide-x-2 divide-gray-500 border-b-2 border-gray-500 bg-yellow-500">
-        //     <div className=" col-span-1 py-2.5 pl-4 bg-sky-300">
-        //       {userValue.name}
-        //     </div>
-        //     <div className=" py-2.5 pl-4 bg-lime-500">{userValue.surname}</div>
-        //     <div className=" py-2.5 px-4 overflow-auto">{userValue.email}</div>
-        //     <div className=" py-2.5 pl-4">{userValue.password}</div>
-        //     <div className=" py-2.5 pl-4">{userValue.headquarter}</div>
-        //     <div className=" py-2.5 pl-4">{userValue.cycle}</div>
-        //     <div className=" py-2.5 pl-4">{userValue.carrer}</div>
-        //   </div>
-        //   <div
-        //     className=" grid grid-cols-5 divide-x-2 divide-gray-500 border-b-2 border-gray-500
-        //    bg-red-500 grow"
-        //   >
-        //     <div>{Access.about ? "Yes" : "No"}</div>
-        //     <div>{Access.posts ? "Yes" : "No"}</div>
-        //     <div>{Access.dashboardPosts ? "Yes" : "No"}</div>
-        //     <div>
-        //       <div>{Access.dashboardUsers ? "Yes" : "No"}</div>
-        //     </div>
-
-        //     <button
-        //       className=" underline underline-offset-2"
-        //       onClick={() => setEdit(!edit)}
-        //     >
-        //       edit
-        //     </button>
-        //   </div>
-        // </div>
         <div className=" flex divide-x-2 divide-gray-500 text-xs border-b-2 border-gray-500 font-medium overflow-auto">
           <div className="flex items-center">
             <div className=" py-2.5 overflow-auto pl-4 w-44 h-fit">
-              {userValue.name}
+              {userValueClone.name}
             </div>
           </div>
           <div className="flex items-center">
             <div className=" py-2.5 overflow-auto pl-4 w-44 h-fit">
-              {userValue.surname}
+              {userValueClone.surname}
             </div>
           </div>
           <div className="flex items-center">
             <div className=" py-2.5 overflow-auto px-4 w-80 h-fit">
-              {userValue.email}
+              {userValueClone.email}
             </div>
           </div>
           <div className="flex items-center">
             <div className=" py-2.5 overflow-auto pl-4 w-24 h-fit">
-              {userValue.password}
+              {userValueClone.password}
             </div>
           </div>
           <div className="flex items-center">
             <div className=" py-2.5 overflow-auto pl-4 w-24 h-fit">
-              {translate[userValue.headquarter]}
+              {translate[userValueClone.headquarter]}
             </div>
           </div>
           <div className="flex items-center">
             <div className=" py-2.5 overflow-auto pl-4 w-12 h-fit">
-              {userValue.cycle}
+              {userValueClone.cycle}
             </div>
           </div>
           <div className="flex items-center">
             <div className=" py-2.5 overflow-auto pl-4 w-24 h-fit">
-              {userValue.carrer}
+              {userValueClone.carrer}
             </div>
           </div>
           <div className="flex items-center">
             <div className=" px-3 h-fit w-11">
-              {Access.about ? "Yes" : "No"}
-            </div>
-          </div>
-
-          <div className="flex items-center">
-            <div className=" px-3 h-fit w-11">
-              {Access.posts ? "Yes" : "No"}
+              {userValueClone.Access.about ? "Yes" : "No"}
             </div>
           </div>
 
           <div className="flex items-center">
             <div className=" px-3 h-fit w-11">
-              {Access.dashboardPosts ? "Yes" : "No"}
+              {userValueClone.Access.posts ? "Yes" : "No"}
             </div>
           </div>
 
           <div className="flex items-center">
             <div className=" px-3 h-fit w-11">
-              {Access.dashboardUsers ? "Yes" : "No"}
+              {userValueClone.Access.dashboardPosts ? "Yes" : "No"}
+            </div>
+          </div>
+
+          <div className="flex items-center">
+            <div className=" px-3 h-fit w-11">
+              {userValueClone.Access.dashboardUsers ? "Yes" : "No"}
             </div>
           </div>
           {willBeDeleted ? (
-            <div className=" pt-4">
+            <div className=" flex items-center">
               {!loadingDelete ? (
-                <div className=" flex gap-4 px-4">
+                <div className=" flex gap-4 px-6">
                   <button
                     className=" underline underline-offset-4"
                     onClick={() => {
@@ -164,6 +146,7 @@ export default function UserRow({ userValue, setCloneData, cloneData }) {
                               (value) => value.id !== userValue.id
                             )
                           );
+                          setWillBeDeleted(false);
                           setLoadingDelete(false);
                           // alert("yes");
                         })
@@ -183,13 +166,13 @@ export default function UserRow({ userValue, setCloneData, cloneData }) {
                   </button>
                 </div>
               ) : (
-                <div className=" px-7">
+                <div className=" px-8 overflow-hidden">
                   <MoonLoader size={22} />
                 </div>
               )}
             </div>
           ) : (
-            <div className=" flex gap-4 px-4">
+            <div className=" flex gap-4 px-6">
               <button
                 className=" underline underline-offset-4"
                 onClick={() => setEdit(!edit)}
@@ -206,7 +189,6 @@ export default function UserRow({ userValue, setCloneData, cloneData }) {
           )}
         </div>
       ) : (
-        // </div>
         <div className=" flex divide-x-2 divide-gray-500 text-xs border-b-2 border-gray-500 font-medium overflow-auto break-words">
           <div className="flex flex-col items-center">
             <input
@@ -347,6 +329,8 @@ export default function UserRow({ userValue, setCloneData, cloneData }) {
           </div>
           <div className="flex flex-col items-center">
             {/* <input
+            {/* <input
+            {/* <input
               className={
                 errors.cycle
                   ? " py-2.5 overflow-auto pl-4 w-12 h-fit ring-red-500 ring-inset ring-2"
@@ -470,15 +454,46 @@ export default function UserRow({ userValue, setCloneData, cloneData }) {
               </select>
             </div>
           </div>
-          <div className=" flex gap-4 px-4">
-            <button className=" underline underline-offset-4">✅</button>
-            <button
-              className=" underline underline-offset-4"
-              onClick={() => setEdit(!edit)}
-            >
-              ❌
-            </button>
-          </div>
+          {!loadingUpdate ? (
+            <div className=" flex gap-4 px-6">
+              <button
+                className=" underline underline-offset-4"
+                onClick={() => {
+                  if (!Object.keys(errors).length) {
+                    setLoadingUpdate(true);
+                    fetch("/dashboard/users/api", {
+                      method: "PUT",
+                      body: JSON.stringify({
+                        idUser: userValue.id,
+                        initData,
+                        Access,
+                      }),
+                    })
+                      .then(() => {
+                        setUserValueClone({ ...initData, Access });
+                      })
+                      .then(() => setEdit(false))
+                      .then(() => setLoadingUpdate(false))
+                      .catch(() => alert("Error, please try again or after"));
+                  } else {
+                    alert("There are some errors in your fields");
+                  }
+                }}
+              >
+                ✅
+              </button>
+              <button
+                className=" underline underline-offset-4"
+                onClick={() => setEdit(!edit)}
+              >
+                ❌
+              </button>
+            </div>
+          ) : (
+            <div className=" py-1 px-8 mr-6 overflow-hidden">
+              <MoonLoader size={22} />
+            </div>
+          )}
         </div>
       )}
     </div>
