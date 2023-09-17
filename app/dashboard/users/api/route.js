@@ -1,6 +1,6 @@
 // import DataBaseInteraction from "@/prisma";
+import DataBaseInteraction from "@/prisma";
 import { NextResponse } from "next/server";
-import DataBaseInteraction from "../../../../prisma";
 
 export async function GET() {
   const allUsers = await DataBaseInteraction.user.findMany({
@@ -10,4 +10,16 @@ export async function GET() {
   });
 
   return NextResponse.json(allUsers);
+}
+
+export async function DELETE(request) {
+  const idUser = request.nextUrl.searchParams.get("id");
+
+  await DataBaseInteraction.user.delete({
+    where: {
+      id: idUser,
+    },
+  });
+
+  return NextResponse.json({ ok: true });
 }

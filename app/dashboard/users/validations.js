@@ -18,15 +18,6 @@ export default function Validations(data) {
   if (data.password?.length < 7)
     errors.password = "Debe tener mínimo 7 caracteres";
   if (data.password?.length === 45) errors.password = "Menor a 45 caracteres";
-  if (data.password !== data.repeatPassword)
-    errors.password = "Las contraseñas deben coincidir";
-
-  if (data.repeatPassword?.length < 7)
-    errors.repeatPassword = "Debe tener mínimo 7 caracteres";
-  if (data.repeatPassword?.length === 45)
-    errors.repeatPassword = "Menor a 45 caracteres";
-  if (data.password !== data.repeatPassword)
-    errors.repeatPassword = "Las contraseñas deben coincidir";
 
   if (data.headquarter === "none") errors.headquarter = "Elija un campus";
 

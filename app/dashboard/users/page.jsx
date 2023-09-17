@@ -2,12 +2,18 @@
 
 import useSWR from "swr";
 import UserRow from "./userRow";
+import { useState } from "react";
 
 export default function UsersDashborad() {
+  const [cloneData, setCloneData] = useState([]);
   const { data, error, isLoading } = useSWR("/dashboard/users/api", (path) =>
-    fetch(path).then((r) => r.json())
+    fetch(path)
+      .then((r) => r.json())
+      .then((r) => {
+        setCloneData(r);
+        return r;
+      })
   );
-
   return (
     <div>
       {isLoading ? (
@@ -44,60 +50,19 @@ export default function UsersDashborad() {
 
             <span></span>
           </div>
-          {data.map((value, index) => {
-            // const [edit, setEdit] = useState(false);
-
+          {cloneData.map((value, index) => {
             return (
-              // <div
-              //   key={index}
-              //   className=" grid grid-cols-7 divide-x-2 divide-gray-500 border-b-2 border-gray-500"
-              // >
-              //   <div className=" col-start-1 py-2.5 pl-4">{value.name}</div>
-              //   <div className=" col-start-2 py-2.5 pl-4">{value.surname}</div>
-              //   <div className=" col-start-3 py-2.5 pl-4">{value.email}</div>
-              //   <div className=" col-start-4 py-2.5 pl-4">{value.password}</div>
-              //   <div className=" col-start-5 py-2.5 pl-4">
-              //     {value.headquarter}
-              //   </div>
-              //   <div className=" col-start-6 py-2.5 pl-4">{value.cycle}</div>
-              //   <div className=" col-start-7 py-2.5 pl-4">{value.carrer}</div>
-              // </div>
-              // <div>
-              //   {!false ? (
-              //     <div
-              //       key={index}
-              //       className=" grid grid-cols-7 divide-x-2 divide-gray-500 border-b-2 border-gray-500"
-              //     >
-              //       <div className=" col-start-1 py-2.5 pl-4">{value.name}</div>
-              //       <div className=" col-start-2 py-2.5 pl-4">
-              //         {value.surname}
-              //       </div>
-              //       <div className=" col-start-3 py-2.5 pl-4">
-              //         {value.email}
-              //       </div>
-              //       <div className=" col-start-4 py-2.5 pl-4">
-              //         {value.password}
-              //       </div>
-              //       <div className=" col-start-5 py-2.5 pl-4">
-              //         {value.headquarter}
-              //       </div>
-              //       <div className=" col-start-6 py-2.5 pl-4">
-              //         {value.cycle}
-              //       </div>
-              //       <div className=" col-start-7 py-2.5 pl-4">
-              //         {value.carrer}
-              //       </div>
-              //     </div>
-              //   ) : (
-              //     <div></div>
-              //   )}
-              // </div>
-              <UserRow key={index} userValue={value} />
+              <UserRow
+                key={index}
+                userValue={value}
+                setCloneData={setCloneData}
+                cloneData={cloneData}
+              />
             );
           })}
         </div>
       ) : (
-        <h1>{JSON.stringify(error)}</h1>
+        <h1>Error, please try again or after {JSON.stringify(error)}</h1>
       )}
     </div>
   );
