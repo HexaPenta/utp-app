@@ -33,25 +33,27 @@ export default function Navbar() {
 
   return (
     // <div className=" p-6 bg-purple-600">
-    <div className=" grid grid-cols-10 bg-indigo-100 gap-5 py-6 px-4 text-center">
-      <Link className=" box-border" href="/">
+    // <div className=" grid grid-cols-10 bg-indigo-100 gap-5 py-6 px-4 text-center overflow-auto">
+    <div className=" flex bg-indigo-100 gap-5 py-6 px-4 text-center overflow-auto">
+      <Link className=" box-content mr-96" href="/">
         <img
-          className=" rounded scale-150 ml-7  "
+          className=" rounded ml-7  "
           src="https://visualizate.utpxpedition.com/sites/default/files/2020-02/logo-visualizate.png"
           alt="utp-mainImage"
+          width={170}
         />
       </Link>
       <Link
-        className=" bg-red-600 rounded col-span-1 col-end-7 text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
+        className=" bg-red-600 rounded col-span-1 col-end-7 text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border w-28 ml-16"
         href="/"
       >
         Home
       </Link>
-      <button className=" bg-red-600 col-start-7 col-span-1 rounded text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border bg-redUTP">
+      <button className=" bg-red-600 col-start-7 col-span-1 rounded text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border bg-redUTP w-28">
         About
       </button>
       <Link
-        className=" bg-red-600 rounded col-span-1 text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
+        className=" bg-red-600 rounded col-span-1 text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border w-28"
         href="/post/all"
       >
         Posts
@@ -63,7 +65,7 @@ export default function Navbar() {
         className={
           idUser
             ? "hidden"
-            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
+            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border w-28"
         }
         href="/user/form/signIn"
       >
@@ -74,7 +76,7 @@ export default function Navbar() {
         className={
           !idUser
             ? "hidden"
-            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
+            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border w-28"
         }
         href="/dashboard/users"
       >
@@ -93,7 +95,7 @@ export default function Navbar() {
         className={
           idUser
             ? "hidden"
-            : " block bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
+            : " block bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border w-28"
         }
         href="/user/form/login"
       >
@@ -105,7 +107,7 @@ export default function Navbar() {
           !idUser
             ? "hidden"
             : // : " block bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
-              " block bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
+              " block bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border w-28"
         }
         onClick={() => {
           localStorage.clear();

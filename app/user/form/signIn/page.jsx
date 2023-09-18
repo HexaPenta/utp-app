@@ -6,6 +6,11 @@ import { MoonLoader } from "react-spinners";
 import Link from "next/link";
 
 export default function SignInSuperUser() {
+  if (typeof window !== "undefined") {
+    if (localStorage.idUser) {
+      //
+    }
+  }
   const [data, setData] = useState({
     headquarter: "none",
     cycle: "none",
@@ -22,8 +27,8 @@ export default function SignInSuperUser() {
     data[name] = value;
     setData(data);
     setError(Validations(data));
-    console.log(data);
-    console.log(Validations(data));
+    // console.log(data);
+    // console.log(Validations(data));
   }
 
   function handleSave() {
@@ -51,10 +56,14 @@ export default function SignInSuperUser() {
         body: JSON.stringify(data),
       })
         .then((r) => r.json())
-        .then(({ exist }) => {
-          console.log(`El usuario ${!exist ? "se creo" : "ya existia"}`);
-          setExistUSer(exist);
-          if (!exist) {
+        .then(({ def, idUser }) => {
+          // console.log(`El usuario ${!def.exist ? "se creo" : "ya existia"}`, {
+          //   def,
+          //   idUser,
+          // });
+          setExistUSer(def.exist);
+          if (!def.exist) {
+            localStorage.idUser = idUser;
             location.replace("/post/all");
           } else {
             setIsLoading(false);
@@ -62,6 +71,7 @@ export default function SignInSuperUser() {
         })
         .catch(() => {
           alert("Try again");
+          setIsLoading(false);
           location.reload();
         });
     }

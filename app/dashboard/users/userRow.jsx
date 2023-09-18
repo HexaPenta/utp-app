@@ -1,12 +1,13 @@
-// "use client";
+"use client";
 //Necessary ???
 
 import { useState } from "react";
 import Validations from "./validations";
 import { MoonLoader } from "react-spinners";
 
-export default function UserRow({ userValue, setCloneData, cloneData }) {
+export default function UserRow({ userValue }) {
   const [userValueClone, setUserValueClone] = useState(userValue);
+  const [hiddenRow, setHiddenRow] = useState(false);
   const [edit, setEdit] = useState(false);
   const [willBeDeleted, setWillBeDeleted] = useState(false);
   const [loadingDelete, setLoadingDelete] = useState(false);
@@ -59,7 +60,7 @@ export default function UserRow({ userValue, setCloneData, cloneData }) {
     setAccess({ ...Access, [name]: value });
   }
   return (
-    <div>
+    <div className={hiddenRow ? "hidden" : ""}>
       {!edit ? (
         <div className=" flex divide-x-2 divide-gray-500 text-xs border-b-2 border-gray-500 font-medium overflow-auto">
           <div className="flex items-center">
@@ -140,20 +141,14 @@ export default function UserRow({ userValue, setCloneData, cloneData }) {
                         method: "DELETE",
                       })
                         .then(() => {
-                          // setLoadingDelete(true);
-                          setCloneData(
-                            cloneData.filter(
-                              (value) => value.id !== userValue.id
-                            )
-                          );
+                          setHiddenRow(true);
                           setWillBeDeleted(false);
                           setLoadingDelete(false);
-                          // alert("yes");
                         })
                         .catch(() =>
                           alert("Error deleting, please try again or after")
                         );
-                      // .finally(() => setLoadingDelete(false));
+                      //////////// .finally(() => setLoadingDelete(false));
                     }}
                   >
                     {/* ✅ */}

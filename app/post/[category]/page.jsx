@@ -4,7 +4,7 @@ import useSWR from "swr";
 import IsLove from "../components/changeLove/isLove";
 
 export default function PostMain({ params }) {
-  console.log(params);
+  // console.log(params);
 
   const idUser =
     typeof window !== "undefined" ? localStorage.getItem("idUser") : null;
@@ -13,7 +13,7 @@ export default function PostMain({ params }) {
     `/post/api?idUser=${idUser}&category=${params.category}`,
     (path) => fetch(path).then((r) => r.json())
   );
-  console.log(data);
+  // console.log(data);
   // const posts = await fetch(
   //   `http://localhost:3000/post/api?idUser=${idUser}`
   // ).then((r) => r.json());

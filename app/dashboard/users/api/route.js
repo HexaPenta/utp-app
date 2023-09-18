@@ -17,6 +17,12 @@ export async function GET() {
 export async function DELETE(request) {
   const idUser = request.nextUrl.searchParams.get("id");
 
+  await DataBaseInteraction.postDetail.deleteMany({
+    where: {
+      idUser,
+    },
+  });
+
   await DataBaseInteraction.user.delete({
     where: {
       id: idUser,

@@ -4,8 +4,7 @@ import { useState } from "react";
 import { ClipLoader } from "react-spinners";
 
 export default function IsLove({ love, idUser, idPost }) {
-  // const idUser = typeof window !== "undefined" ? localStorage.idUser : "";
-  console.log("|=>", love, idUser, idPost);
+  // console.log("|=>", love, idUser, idPost);
 
   const [newLove, setNewLove] = useState(love);
   const [mustBeRegistered, setMustBeRegistered] = useState(false);
@@ -25,7 +24,7 @@ export default function IsLove({ love, idUser, idPost }) {
       setNewLove(res);
     } else {
       setMustBeRegistered(true);
-      setTimeout(() => setMustBeRegistered(false), 1250);
+      setTimeout(() => setMustBeRegistered(false), 1205);
     }
 
     setLoading(false);
