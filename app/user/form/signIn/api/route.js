@@ -1,4 +1,4 @@
-import DataBaseInteraction, { access } from "@/prisma";
+import DataBaseInteraction from "@/prisma";
 import { NextResponse } from "next/server";
 
 export async function POST(r) {
@@ -11,6 +11,8 @@ export async function POST(r) {
     exist: true,
   };
 
+  let idUser = "";
+
   const userByEmail = await DataBaseInteraction.user.findMany({
     where: {
       email,
@@ -19,7 +21,7 @@ export async function POST(r) {
 
   if (!userByEmail.length) {
     def.exist = false;
-    await DataBaseInteraction.user.create({
+    const { id } = await DataBaseInteraction.user.create({
       include: {
         Access: true,
       },
@@ -39,9 +41,10 @@ export async function POST(r) {
         },
       },
     });
+    idUser = id;
   }
 
-  return NextResponse.json(def);
+  return NextResponse.json({ def, idUser });
   // return NextResponse.json({
   //   name,
   //   surname,

@@ -1,7 +1,7 @@
 export default function Landing() {
   return (
     // <div className=" flex flex-col bg-yellow-300 h-screen p-6">
-    <div>
+    <div className=" overflow-auto break-words">
       <img
         src="https://www.utp.edu.pe/sites/default/files/styles/transformar_webp/public/hero-banner/Pieza-web-1702-x-692-px%20%281%29.jpg.webp?itok=E3z9flWq"
         // src="https://www.utp.edu.pe/web/sites/default/files/banner/Fondo-portada-Home-1x.webp"
@@ -12,7 +12,7 @@ export default function Landing() {
       <footer className=" bg-black py-14 px-16 text-white">
         {/* <div className=" container"></div> */}
         {/* <div className="flex divide-x-2 divide-white mx-auto max-w-7xl border-b border-gray-500"> */}
-        <div className="flex mx-auto max-w-7xl border-b border-gray-500">
+        <div className=" mx-auto max-w-7xl border-b border-gray-500 max-md:flex-col max-md:items-center flex max-md:text-xs">
           {/* <div className=" col-span-2"> */}
           <div className=" w-2/5">
             <h2 className=" font-medium text-3xl">Nuestro campus</h2>
@@ -56,7 +56,9 @@ export default function Landing() {
             </div>
           </div>
           <div className=" w-1/3 pl-4 mb-20">
-            <h2 className=" font-medium text-3xl mb-6">Contáctanos</h2>
+            <h2 className=" font-medium text-3xl mb-6 max-md:mt-6">
+              Contáctanos
+            </h2>
             <div className=" flex">
               <svg
                 fill="none"
@@ -321,7 +323,7 @@ export default function Landing() {
             </div>
           </div>
         </div>
-        <ul className=" flex gap-x-6 py-4 mx-auto max-w-7xl mt-10">
+        <ul className=" max-md:flex-col max-md:w-fit flex gap-8 gap-x-6 py-4 mx-auto max-w-7xl mt-10">
           <li className=" bg-slate-300 py-3 px-5 rounded-full">
             <a href="https://www.facebook.com/UTP.Peru/" target="_blank">
               <svg

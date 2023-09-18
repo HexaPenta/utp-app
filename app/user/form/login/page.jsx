@@ -11,23 +11,25 @@ export default function Login() {
     }
   }
 
-  const [data, setData] = useState({});
+  const [data, setData] = useState({
+    email: "",
+    password: "",
+  });
   const [loading, setLoading] = useState(false);
   const [notFound, setNotFound] = useState(false);
 
   function handleData(event) {
     const { name, value } = event.target;
-    data[name] = value;
-    setData(data);
-    console.log(data);
+    // data[name] = value;
+    setData({ ...data, [name]: value });
+    console.log({ ...data, [name]: value });
   }
 
-  async function handleSubmit(event) {
+  async function handleSubmit() {
     setLoading(true);
     setNotFound(false);
-    // event.preventDefault();
     const user = await fetch(
-      `/user/form/login/api?email=${data.email}&password=${data.password}`
+      `/user/form/login/api?email=${data.email.trim()}&password=${data.password.trim()}`
     )
       .then((r) => r.json())
       .catch(() => {
@@ -132,7 +134,7 @@ export default function Login() {
                 </button>
                 {notFound ? (
                   <h3 className=" text-red-600 font-medium text-sm">
-                    Error-User-not-found - - - - -
+                    Error-User-not-found
                   </h3>
                 ) : null}
               </div>
