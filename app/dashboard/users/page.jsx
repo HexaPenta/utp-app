@@ -5,14 +5,14 @@ import UserRow from "./userRow";
 import { useState } from "react";
 
 export default function UsersDashborad() {
-  const [cloneData, setCloneData] = useState([]);
-  const { data, error, isLoading } = useSWR("/dashboard/users/api", (path) =>
-    fetch(path)
-      .then((r) => r.json())
-      .then((r) => {
-        setCloneData(r);
-        return r;
-      })
+  // const [cloneData, setCloneData] = useState([]);
+  const { data, error, isLoading } = useSWR(
+    "/dashboard/users/api",
+    (path) => fetch(path).then((r) => r.json())
+    // .then((r) => {
+    //   setCloneData(r);
+    //   return r;
+    // })
   );
   return (
     <div>
@@ -52,15 +52,8 @@ export default function UsersDashborad() {
               <div className=" py-2.5 pl-4">Accesos</div>
             </div>
           </div>
-          {cloneData.map((value, index) => {
-            return (
-              <UserRow
-                key={index}
-                userValue={value}
-                setCloneData={setCloneData}
-                cloneData={cloneData}
-              />
-            );
+          {data.map((value, index) => {
+            return <UserRow key={index} userValue={value} />;
           })}
         </div>
       ) : (
