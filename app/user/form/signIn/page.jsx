@@ -132,7 +132,7 @@ export default function SignInSuperUser() {
                   </label>
                   <div className=" mt-2">
                     <input
-                      maxLength={50}
+                      maxLength={45}
                       onChange={handleData}
                       value={data.email}
                       type="email"
