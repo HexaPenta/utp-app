@@ -32,19 +32,26 @@ export default function Navbar() {
   }, []);
 
   return (
+    // <div className=" p-6 bg-purple-600">
     <div className=" grid grid-cols-10 bg-indigo-100 gap-5 py-6 px-4 text-center">
-      <button className=" box-border">
+      <Link className=" box-border" href="/">
         <img
           className=" rounded scale-150 ml-7  "
           src="https://visualizate.utpxpedition.com/sites/default/files/2020-02/logo-visualizate.png"
-          alt=""
+          alt="utp-mainImage"
         />
-      </button>
-      <button className=" bg-red-600 col-start-7 col-span-1 rounded text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border bg-redUTP">
+      </Link>
+      <Link
+        className=" bg-red-600 rounded col-span-1 col-end-7 text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
+        href="/"
+      >
+        Home
+      </Link>
+      <button className=" bg-red-600 col-start-7 col-span-1 rounded text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border bg-redUTP">
         About
       </button>
       <Link
-        className=" bg-red-600 rounded col-span-1 text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
+        className=" bg-red-600 rounded col-span-1 text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
         href="/post/all"
       >
         Posts
@@ -56,7 +63,7 @@ export default function Navbar() {
         className={
           idUser
             ? "hidden"
-            : " bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
+            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
         }
         href="/user/form/signIn"
       >
@@ -67,15 +74,15 @@ export default function Navbar() {
         className={
           !idUser
             ? "hidden"
-            : " bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
+            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
         }
-        href="/post/all"
+        href="/dashboard/users"
       >
         Dash
       </Link>
 
       {/* <Link
-        className=" bg-red-600 rounded text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
+        className=" bg-red-600 rounded text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
         // href="https://www.instagram.com/reels/CwYDETrqej3/"
         href="/user/form/login"
       >
@@ -86,7 +93,7 @@ export default function Navbar() {
         className={
           idUser
             ? "hidden"
-            : " block bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
+            : " block bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
         }
         href="/user/form/login"
       >
@@ -97,16 +104,17 @@ export default function Navbar() {
         className={
           !idUser
             ? "hidden"
-            : " block bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
+            : // : " block bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
+              " block bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
         }
         onClick={() => {
           localStorage.clear();
-          //   location.replace("/post/all");
-          location.reload();
+          location.replace("/post/all");
         }}
       >
         Logout
       </button>
     </div>
+    // </div>
   );
 }
