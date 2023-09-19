@@ -56,7 +56,7 @@ export default function PostMain({ params }) {
         return (
           <div
             key={index}
-            className=" rounded-lg shadow-md mb-4 box-border p-5 dark:bg-slate-100"
+            className=" rounded-lg shadow-md mb-4 box-border p-5 dark:bg-slate-100 overflow-auto"
           >
             {/* <h1 className=" text-gray-900 font-bold text-lg">{value.id}</h1> */}
             <h1 className="text-gray-900 font-bold text-lg">{value.title}</h1>
