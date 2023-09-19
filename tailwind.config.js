@@ -13,6 +13,9 @@ module.exports = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
+    minWidth: {
+      "150px": "150px",
+    },
     // colors: {
     //   // redUTP: "#0E0E0E",
     // },

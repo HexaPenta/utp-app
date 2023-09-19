@@ -34,17 +34,17 @@ export default function Navbar() {
   return (
     // <div className=" p-6 bg-purple-600">
     // <div className=" grid grid-cols-10 bg-indigo-100 gap-5 py-6 px-4 text-center overflow-auto">
-    <div className=" flex bg-indigo-100 gap-5 py-6 px-4 text-center overflow-auto">
-      <Link className=" box-content mr-96" href="/">
+    <div className=" flex bg-indigo-100 gap-5 py-6 px-4 text-center overflow-auto justify-around">
+      <Link className=" box-border mr-96" href="/">
         <img
-          className=" rounded ml-7  "
+          className=" rounded ml-7 min-w-150px"
           src="https://visualizate.utpxpedition.com/sites/default/files/2020-02/logo-visualizate.png"
           alt="utp-mainImage"
           width={170}
         />
       </Link>
       <Link
-        className=" bg-red-600 rounded col-span-1 col-end-7 text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border w-28 ml-16"
+        className=" bg-red-600 rounded col-span-1 col-end-7 text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border w-28 ml-40"
         href="/"
       >
         Home

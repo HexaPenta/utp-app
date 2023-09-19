@@ -2,17 +2,10 @@
 
 import useSWR from "swr";
 import UserRow from "./userRow";
-import { useState } from "react";
 
 export default function UsersDashborad() {
-  // const [cloneData, setCloneData] = useState([]);
-  const { data, error, isLoading } = useSWR(
-    "/dashboard/users/api",
-    (path) => fetch(path).then((r) => r.json())
-    // .then((r) => {
-    //   setCloneData(r);
-    //   return r;
-    // })
+  const { data, error, isLoading } = useSWR("/dashboard/users/api", (path) =>
+    fetch(path).then((r) => r.json())
   );
   return (
     <div>
@@ -36,7 +29,6 @@ export default function UsersDashborad() {
             </div>
 
             <div className="flex items-center">
-              {/* <div className=" py-2.5 pl-2 w-24">Headquarter</div> */}
               <div className=" py-2.5 pl-2 w-24">Seat</div>
             </div>
 

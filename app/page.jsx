@@ -1,19 +1,14 @@
 export default function Landing() {
   return (
-    // <div className=" flex flex-col bg-yellow-300 h-screen p-6">
     <div className=" overflow-auto break-words">
       <img
         src="https://www.utp.edu.pe/sites/default/files/styles/transformar_webp/public/hero-banner/Pieza-web-1702-x-692-px%20%281%29.jpg.webp?itok=E3z9flWq"
-        // src="https://www.utp.edu.pe/web/sites/default/files/banner/Fondo-portada-Home-1x.webp"
         width={100000}
         alt=""
       />
       <div className=" bg-rose-600 h-6"></div>
       <footer className=" bg-black py-14 px-16 text-white">
-        {/* <div className=" container"></div> */}
-        {/* <div className="flex divide-x-2 divide-white mx-auto max-w-7xl border-b border-gray-500"> */}
         <div className=" mx-auto max-w-7xl border-b border-gray-500 max-md:flex-col max-md:items-center flex max-md:text-xs">
-          {/* <div className=" col-span-2"> */}
           <div className=" w-2/5">
             <h2 className=" font-medium text-3xl">Nuestro campus</h2>
             <div className=" flex flex-wrap gap-x-4 gap-y-5 mt-3">
