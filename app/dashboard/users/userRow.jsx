@@ -1,5 +1,4 @@
 "use client";
-//Necessary ???
 
 import { useState } from "react";
 import Validations from "./validations";
@@ -129,14 +128,6 @@ export default function UserRow({ userValue }) {
                     className=" underline underline-offset-4"
                     onClick={() => {
                       setLoadingDelete(true);
-                      // await fetch(`/dashboard/users/api?id=${userValue.id}`, {
-                      //   method: "DELETE",
-                      // });
-                      // setCloneData(
-                      //   cloneData.filter((value) => value.id !== userValue.id)
-                      // );
-                      // setLoadingDelete(false);
-                      ////////////////////////////////////////////////////////////////
                       fetch(`/dashboard/users/api?id=${userValue.id}`, {
                         method: "DELETE",
                       })
@@ -148,7 +139,6 @@ export default function UserRow({ userValue }) {
                         .catch(() =>
                           alert("Error deleting, please try again or after")
                         );
-                      //////////// .finally(() => setLoadingDelete(false));
                     }}
                   >
                     {/* ✅ */}

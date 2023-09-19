@@ -4,8 +4,6 @@ import { useState } from "react";
 import { ClipLoader } from "react-spinners";
 
 export default function IsLove({ love, idUser, idPost }) {
-  // console.log("|=>", love, idUser, idPost);
-
   const [newLove, setNewLove] = useState(love);
   const [mustBeRegistered, setMustBeRegistered] = useState(false);
   const [loading, setLoading] = useState(false);
