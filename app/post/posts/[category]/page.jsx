@@ -2,18 +2,19 @@
 
 import useSWR from "swr";
 import IsLove from "../components/changeLove/isLove";
+// import Image from "next/image";
 
 export default function PostMain({ params }) {
-  // console.log(params);
+  console.log(params);
 
   const idUser =
     typeof window !== "undefined" ? localStorage.getItem("idUser") : null;
 
   const { data, error, isLoading } = useSWR(
-    `/post/api?idUser=${idUser}&category=${params.category}`,
+    `/post/posts/api?idUser=${idUser}&category=${params.category}`,
     (path) => fetch(path).then((r) => r.json())
   );
-  // console.log(data);
+  console.log(data);
   // const posts = await fetch(
   //   `http://localhost:3000/post/api?idUser=${idUser}`
   // ).then((r) => r.json());
@@ -60,12 +61,18 @@ export default function PostMain({ params }) {
           >
             {/* <h1 className=" text-gray-900 font-bold text-lg">{value.id}</h1> */}
             <h1 className="text-gray-900 font-bold text-lg">{value.title}</h1>
-            <h2>{value.image}</h2>
+            {/* <h2>{value.image}</h2> */}
             <img
-              src="https://scontent.fpiu1-1.fna.fbcdn.net/v/t39.30808-6/371097562_715043084001396_5355569202192732869_n.jpg?stp=dst-jpg_p526x395&_nc_cat=102&ccb=1-7&_nc_sid=49d041&_nc_ohc=1gvrpO9G6lkAX-iSZWM&_nc_ht=scontent.fpiu1-1.fna&oh=00_AfCtJo5X9D_LvlWuvJEUaslyXHKeXV22lbPyq3trvvIzjQ&oe=64F6A7C7"
+              src={value.image}
               alt=""
               className="w-72 mx-auto rounded-md px-4 py-6"
             />
+            {/* <Image
+              src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/b7/b3/eb/caption.jpg?w=1200&h=-1&s=1"
+              width={100}
+              height={100}
+              alt="none"
+            /> */}
             <h2>{value.description}</h2>
             {/* <ChangeLove
                     idUser={idUser}

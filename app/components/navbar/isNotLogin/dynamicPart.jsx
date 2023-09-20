@@ -18,7 +18,7 @@ export default function DynamicPart({ idUser }) {
       ) : (
         <Link
           className=" bg-red-600 rounded  text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
-          href="/post/all"
+          href="/post/posts/all"
         >
           Dashboard
         </Link>
@@ -37,7 +37,7 @@ export default function DynamicPart({ idUser }) {
           className=" bg-red-600 rounded text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
           onClick={() => {
             localStorage.clear();
-            location.replace("/post/all");
+            location.replace("/post/posts/all");
           }}
         >
           LogOut
