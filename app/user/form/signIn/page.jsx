@@ -80,21 +80,22 @@ export default function SignInSuperUser() {
   return (
     <div className=" bg-white">
       <div className="mx-auto  px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div className="  mx-auto  max-w-2xl dark:bg-slate-100 rounded-md p-11">
+        <div className="  mx-auto  max-w-2xl bg-slate-100 rounded-md p-11">
           <form
+            className=""
             onSubmit={(e) => {
               e.preventDefault();
             }}
           >
-            <div className="border-b border-gray-900/10 pb-12 ">
+            <div className="border-b border-gray-900/10 pb-12">
               <h2 className="text-base font-semibold leading-7 text-gray-900">
                 Register a new user
               </h2>
               <p className="mt-1 text-sm leading-6 text-gray-600">
                 All fields are required
               </p>
-              <div className="mt-10 grid grid-cols-6 gap-x-6 gap-y-8 ">
-                <div className="sm:col-span-3">
+              <div className="mt-10 grid grid-cols-6 gap-x-6 gap-y-8">
+                <div className="col-span-3">
                   <label className="block text-sm font-medium leading-6 text-gray-900">
                     name
                   </label>

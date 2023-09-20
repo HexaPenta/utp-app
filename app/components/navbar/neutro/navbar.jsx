@@ -48,16 +48,16 @@ export default function Navbar() {
       <div className=" w-28 h-5 bg-orange-400"></div>
       <div className=" w-28 h-5 bg-orange-400"></div> */}
       <Link
-        className=" bg-red-600 rounded col-span-1 col-end-7 text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border w-28 flex items-center text-end"
+        className=" bg-red-600 rounded col-span-1 col-end-7 text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border w-28 flex items-center text-end"
         href="/"
       >
         <div className=" mx-auto">Home</div>
       </Link>
-      <button className=" bg-red-600 col-start-7 col-span-1 rounded text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border bg-redUTP w-28 flex items-center">
+      <button className=" bg-red-600 col-start-7 col-span-1 rounded text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border bg-redUTP w-28 flex items-center">
         <div className=" mx-auto">About</div>
       </button>
       <Link
-        className=" bg-red-600 rounded col-span-1 text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border w-28 flex items-center"
+        className=" bg-red-600 rounded col-span-1 text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border w-28 flex items-center"
         href="/post/all"
       >
         <div className=" mx-auto">Posts</div>
@@ -69,7 +69,7 @@ export default function Navbar() {
         className={
           idUser
             ? "hidden"
-            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border w-28 flex items-center"
+            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border w-28 flex items-center"
         }
         href="/user/form/signIn"
       >
@@ -80,7 +80,7 @@ export default function Navbar() {
         className={
           !idUser
             ? "hidden"
-            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border w-28 flex items-center"
+            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border w-28 flex items-center"
         }
         href="/dashboard/users"
       >
@@ -88,7 +88,7 @@ export default function Navbar() {
       </Link>
 
       {/* <Link
-        className=" bg-red-600 rounded text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
+        className=" bg-red-600 rounded text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border"
         // href="https://www.instagram.com/reels/CwYDETrqej3/"
         href="/user/form/login"
       >
@@ -99,7 +99,7 @@ export default function Navbar() {
         className={
           idUser
             ? "hidden"
-            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border w-28 flex items-center"
+            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border w-28 flex items-center"
         }
         href="/user/form/login"
       >
@@ -110,8 +110,8 @@ export default function Navbar() {
         className={
           !idUser
             ? "hidden"
-            : // : " block bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border"
-              " bg-red-600 rounded  text-white hover:bg-black text-sm font-semibold px-3 py-2 box-border w-28 flex items-center"
+            : // : " block bg-red-600 rounded  text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border"
+              " bg-red-600 rounded  text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border w-28 flex items-center"
         }
         onClick={() => {
           localStorage.clear();
