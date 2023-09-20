@@ -7,25 +7,25 @@ export default function PostLayout({ children }) {
       <div className=" overflow-auto">
         <div className="overflow-auto flex bg-indigo-100 gap-5 py-6 px-4 text-center border-t border-gray-400 pb-6">
           <Link
-            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-sm font-black font-serif px-3 box-border text-gray-900 w-52 flex flex-col"
+            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-xs font-black font-serif px-3 box-border text-gray-900 w-52 flex flex-col"
             href="/post/architecture"
           >
             <div className=" my-auto">Architecture</div>
           </Link>
           <Link
-            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-sm  font-black font-serif hover:font-sans px-3 py-2 box-border text-gray-900 w-52 flex flex-col"
+            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-xs  font-black font-serif hover:font-sans px-3 py-2 box-border text-gray-900 w-52 flex flex-col"
             href="/post/civilEngineering"
           >
             <div className=" my-auto">Civil engineering</div>
           </Link>
           <Link
-            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-sm  font-black font-serif hover:font-sans px-3 py-2 box-border text-gray-900 w-52 flex flex-col"
+            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-xs  font-black font-serif hover:font-sans px-3 py-2 box-border text-gray-900 w-52 flex flex-col"
             href="/post/industrialEngineering"
           >
             <div className=" my-auto">Industrial engineering</div>
           </Link>
           <Link
-            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-sm  font-black font-serif hover:font-sans px-3 py-2 box-border text-gray-900 w-52 flex flex-col"
+            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-xs  font-black font-serif hover:font-sans px-3 py-2 box-border text-gray-900 w-52 flex flex-col"
             href="/post/systemsEngineering"
           >
             <div className=" my-auto">Sistems engineering</div>
@@ -33,7 +33,7 @@ export default function PostLayout({ children }) {
 
           <div className=" grow flex justify-end">
             <Link
-              className=" border-x-2 border-y-2 col-start-10 col-span-3  border-gray-600 rounded hover:bg-black  hover:text-white text-sm  font-black font-serif hover:font-sans px-3 box-border text-gray-900 w-52 flex flex-col ml-40"
+              className=" border-x-2 border-y-2 col-start-10 col-span-3  border-gray-600 rounded hover:bg-black  hover:text-white text-xs  font-black font-serif hover:font-sans px-3 box-border text-gray-900 w-52 flex flex-col ml-40"
               href="/post/all"
             >
               <div className=" my-auto">All</div>
