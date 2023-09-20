@@ -7,25 +7,25 @@ export default function PostLayout({ children }) {
       <div className=" overflow-auto">
         <div className="overflow-auto flex bg-indigo-100 gap-5 py-6 px-4 text-center border-t border-gray-400 pb-6">
           <Link
-            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-sm  font-extrabold font-serif px-3 box-border text-gray-900 w-52 flex flex-col"
+            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-xs font-black font-serif px-3 box-border text-gray-900 w-52 flex flex-col"
             href="/post/architecture"
           >
             <div className=" my-auto">Architecture</div>
           </Link>
           <Link
-            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-sm  font-extrabold font-serif px-3 py-2 box-border text-gray-900 w-52 flex flex-col"
+            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-xs  font-black font-serif hover:font-sans px-3 py-2 box-border text-gray-900 w-52 flex flex-col"
             href="/post/civilEngineering"
           >
             <div className=" my-auto">Civil engineering</div>
           </Link>
           <Link
-            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-sm  font-extrabold font-serif px-3 py-2 box-border text-gray-900 w-52 flex flex-col"
+            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-xs  font-black font-serif hover:font-sans px-3 py-2 box-border text-gray-900 w-52 flex flex-col"
             href="/post/industrialEngineering"
           >
             <div className=" my-auto">Industrial engineering</div>
           </Link>
           <Link
-            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-sm  font-extrabold font-serif px-3 py-2 box-border text-gray-900 w-52 flex flex-col"
+            className=" border-x-2 border-y-2  border-gray-600  col-span-2 rounded hover:bg-black  hover:text-white text-xs  font-black font-serif hover:font-sans px-3 py-2 box-border text-gray-900 w-52 flex flex-col"
             href="/post/systemsEngineering"
           >
             <div className=" my-auto">Sistems engineering</div>
@@ -33,7 +33,7 @@ export default function PostLayout({ children }) {
 
           <div className=" grow flex justify-end">
             <Link
-              className=" border-x-2 border-y-2 col-start-10 col-span-3  border-gray-600 rounded hover:bg-black  hover:text-white text-sm  font-extrabold font-serif px-3 box-border text-gray-900 w-52 flex flex-col ml-40"
+              className=" border-x-2 border-y-2 col-start-10 col-span-3  border-gray-600 rounded hover:bg-black  hover:text-white text-xs  font-black font-serif hover:font-sans px-3 box-border text-gray-900 w-52 flex flex-col ml-40"
               href="/post/all"
             >
               <div className=" my-auto">All</div>
@@ -41,8 +41,8 @@ export default function PostLayout({ children }) {
           </div>
         </div>
       </div>
-      <div className="flex max-w-full px-4 overflow-auto">
-        <div className=" w-1/4 rounded-lg ml-2 h-fit overflow-auto">
+      <div className="flex max-w-full px-4 overflow-auto justify-center">
+        <div className=" w-1/4 rounded-lg ml-2 h-fit overflow-auto max-md:hidden">
           <div className="  px-4 py-6 grid grid-cols-1 gap-y-14  mx-auto w-fit items-center ">
             {/* <div className=" flex flex-col gap-y-14 pt-8 mx-auto w-fit"> */}
             <img
@@ -127,8 +127,10 @@ export default function PostLayout({ children }) {
             />
           </div>
         </div>
-        <div className=" w-1/2 p-4 pt-0 overflow-auto">{children}</div>
-        <div className=" w-1/4 h-fit px-4 py-6 grid grid-col-1 gap-y-12 my-4 overflow-auto">
+        <div className=" w-1/2 p-4 pt-0 overflow-auto max-md:w-auto">
+          {children}
+        </div>
+        <div className=" w-1/4 h-fit px-4 py-6 grid grid-col-1 gap-y-12 my-4 overflow-auto max-md:hidden">
           {/* <div className=" bg-yellow-400 w-1/4 h-fit rounded-lg shadow-md px-4 py-6 grid-col-1 gap-y-96 "> */}
           <img src={UrlImagePortalUTP} alt="" className=" mx-auto" />
           <img
