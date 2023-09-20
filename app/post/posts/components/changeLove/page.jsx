@@ -12,7 +12,7 @@ export default function ChangeLove({ idUser, idPost, iLove, idPostDetail }) {
 
   let idPostDetailUse = idPostDetail;
   // function fetcher() {
-  //   return fetch("http://localhost:3000/post/components/changeLove/api", {
+  //   return fetch("http://localhost:3000/post/posts/components/changeLove/api", {
   //     method: "PUT",
   //     body: JSON.stringify({ iLove: !love, idUser, idPost, idPostDetail }),
   //   }).finally(() => {});
@@ -23,7 +23,7 @@ export default function ChangeLove({ idUser, idPost, iLove, idPostDetail }) {
   async function handleLove() {
     setLoading(true);
     const m = await fetch(
-      "http://localhost:3000/post/components/changeLove/api",
+      "http://localhost:3000/post/posts/components/changeLove/api",
       {
         method: "PUT",
         body: JSON.stringify({ iLove: !love, idUser, idPost, idPostDetailUse }),

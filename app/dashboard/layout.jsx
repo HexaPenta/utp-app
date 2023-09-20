@@ -11,7 +11,7 @@ export default function DashboardLayout({ children }) {
           >
             Users
           </Link>
-          <button className=" text-2xl grow font-bold text-white bg-black hover:bg-slate-600/75">
+          <button className=" text-2xl grow font-bold text-white bg-black hover:bg-slate-600/75 px-5">
             +
           </button>
         </div>
@@ -22,9 +22,12 @@ export default function DashboardLayout({ children }) {
           >
             Posts
           </Link>
-          <button className=" text-2xl grow font-bold text-white bg-black hover:bg-slate-600/75">
+          <Link
+            className=" text-2xl grow font-bold text-white bg-black hover:bg-slate-600/75 px-5"
+            href="/post/form"
+          >
             +
-          </button>
+          </Link>
         </div>
       </div>
       {children}

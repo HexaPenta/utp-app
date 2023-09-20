@@ -21,7 +21,7 @@ export default function IsNotLogin() {
       </button>
       <Link
         className=" bg-red-600 rounded col-span-1 text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
-        href="/post/all"
+        href="/post/posts/all"
       >
         Posts
       </Link>

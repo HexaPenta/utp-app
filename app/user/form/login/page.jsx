@@ -7,7 +7,7 @@ import { MoonLoader } from "react-spinners";
 export default function Login() {
   if (typeof window !== "undefined") {
     if (localStorage.idUser) {
-      // location.replace("/post/all");
+      // location.replace("/post/posts/all");
     }
   }
 
@@ -56,7 +56,7 @@ export default function Login() {
         localStorage.setItem("dashboardPosts", user.Access.dashboardPosts);
 
         // location.replace(`/user/${user.id}`);
-        location.replace(`/post/all`);
+        location.replace(`/post/posts/all`);
       }
     } else {
       setLoading(false);
@@ -117,7 +117,7 @@ export default function Login() {
                 <div className="flex gap-x-3">
                   <Link
                     className=" font-semibold text-sm text-gray-800 py-2"
-                    href="/post/all"
+                    href="/post/posts/all"
                   >
                     Cancel
                   </Link>

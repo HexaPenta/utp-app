@@ -12,7 +12,7 @@ export default function IsLove({ love, idUser, idPost }) {
     setLoading(true);
 
     if (idUser) {
-      const res = await fetch("/post/components/changeLove/api", {
+      const res = await fetch("/post/posts/components/changeLove/api", {
         method: "PUT",
         body: JSON.stringify({ newLove: !newLove, idUser, idPost }),
       })

@@ -58,7 +58,7 @@ export default function Navbar() {
       </button>
       <Link
         className=" bg-red-600 rounded col-span-1 text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border w-28 flex items-center"
-        href="/post/all"
+        href="/post/posts/all"
       >
         <div className=" mx-auto">Posts</div>
       </Link>
@@ -115,7 +115,7 @@ export default function Navbar() {
         }
         onClick={() => {
           localStorage.clear();
-          location.replace("/post/all");
+          location.replace("/post/posts/all");
         }}
       >
         <div className=" mx-auto">Logout</div>

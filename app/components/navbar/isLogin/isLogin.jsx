@@ -21,7 +21,7 @@ export default function IsLogin() {
       </button>
       <Link
         className=" bg-red-600 rounded col-span-1 text-white hover:bg-indigo-500 text-sm font-semibold px-3 py-2 box-border"
-        href="/post/all"
+        href="/post/posts/all"
       >
         Posts
       </Link>
@@ -35,7 +35,7 @@ export default function IsLogin() {
         // href="https://www.instagram.com/reels/CwYDETrqej3/"
         onClick={() => {
           localStorage.clear();
-          location.replace("/post/all"); //¿? how to define it
+          location.replace("/post/posts/all"); //¿? how to define it
         }}
       >
         logout
