@@ -2,7 +2,6 @@
 
 import useSWR from "swr";
 import IsLove from "../components/changeLove/isLove";
-// import Image from "next/image";
 
 export default function PostMain({ params }) {
   console.log(params);
@@ -15,9 +14,6 @@ export default function PostMain({ params }) {
     (path) => fetch(path).then((r) => r.json())
   );
   console.log(data);
-  // const posts = await fetch(
-  //   `http://localhost:3000/post/api?idUser=${idUser}`
-  // ).then((r) => r.json());
 
   if (error) return <div>failed to load</div>;
   if (isLoading)
@@ -43,9 +39,6 @@ export default function PostMain({ params }) {
     );
 
   return (
-    // <div className="flex max-w-full px-2">
-    //   <div className=" bg-lime-600 w-1/4 rounded-lg">left</div>
-    // <div className=" w-1/2 p-4 pt-0">
     <div>
       {data.map((value, index) => {
         let love = false;
@@ -57,45 +50,27 @@ export default function PostMain({ params }) {
         return (
           <div
             key={index}
-            className=" rounded-lg shadow-md mb-4 box-border p-5 dark:bg-slate-100 overflow-auto"
+            className=" rounded-lg shadow-md mb-4 box-border pt-3.5 pb-5 px-0.5 mt-6 dark:bg-slate-100 overflow-auto"
           >
-            {/* <h1 className=" text-gray-900 font-bold text-lg">{value.id}</h1> */}
-            <h1 className="text-gray-900 font-bold text-lg">{value.title}</h1>
-            {/* <h2>{value.image}</h2> */}
-            <img
-              src={value.image}
-              alt=""
-              className="w-72 mx-auto rounded-md px-4 py-6"
-            />
-            {/* <Image
-              src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1a/b7/b3/eb/caption.jpg?w=1200&h=-1&s=1"
-              width={100}
-              height={100}
-              alt="none"
-            /> */}
-            <h2>{value.description}</h2>
-            {/* <ChangeLove
-                    idUser={idUser}
-                    idPost={value.id}
-                    iLove={iLove}
-                    idPostDetail={idPostDetail}
-                  /> */}
+            <h1 className="text-gray-900 font-bold font-sans text-xl pl-5 mb-5">
+              {value.title}
+            </h1>
+
+            <div className=" overflow-auto flex gap-6 snap-x snap-mandatory">
+              {value.image.map((aImage, i_Index) => (
+                <img
+                  className=" snap-center rounded-md mx-auto"
+                  key={i_Index}
+                  src={aImage}
+                  alt="none-chargued_:/"
+                />
+              ))}
+            </div>
+            <h2 className=" my-4 pl-4">{value.description}</h2>
             <IsLove love={love} idUser={idUser} idPost={value.id} />
           </div>
         );
       })}
     </div>
-    // </div>
-    //   <div className=" bg-indigo-600 w-1/4 rounded-lg">right</div>
-    // </div>
   );
-
-  // return (
-  //   <div>
-  //     {posts.map((value, index) => {
-  //       return <div key={index}>{value.id}</div>;
-  //     })}
-  //     G
-  //   </div>
-  // );
 }
