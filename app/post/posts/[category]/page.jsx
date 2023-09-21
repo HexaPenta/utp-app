@@ -57,7 +57,7 @@ export default function PostMain({ params }) {
             </h1>
 
             <div className=" overflow-auto flex gap-6 snap-x snap-mandatory">
-              {value.image.map((aImage, i_Index) => (
+              {value.image?.map((aImage, i_Index) => (
                 <img
                   className=" snap-center rounded-md mx-auto"
                   key={i_Index}
