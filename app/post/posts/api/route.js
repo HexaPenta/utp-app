@@ -38,6 +38,8 @@ export async function GET(request) {
         [category]: true,
       },
     },
+    skip: 0,
+    take: 5,
   });
 
   return NextResponse.json(posts);

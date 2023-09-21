@@ -1,23 +1,30 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MoonLoader } from "react-spinners";
 
 export default function NewPost() {
-  const [currentImage, setCurrentImage] = useState(null);
+  const [refresh, setRefresh] = useState(0);
+  const [currentImage, setCurrentImage] = useState([]);
   const [loading, setLoading] = useState(false);
 
   function handleImage(e) {
-    try {
+    setLoading(true);
+    for (const iterator of e.target.files) {
       const readImage = new FileReader();
-      readImage.readAsDataURL(e.target.files[0]);
+      readImage.readAsDataURL(iterator);
       readImage.onload = (e) => {
-        setCurrentImage(e.target.result);
+        currentImage.push(e.target.result);
+        setCurrentImage(currentImage);
       };
-    } catch (error) {
-      console.log("Failed to execute");
     }
+    setRefresh(refresh + 1);
+    setTimeout(() => {
+      setRefresh(refresh + 1.81);
+      setLoading(false);
+    }, 891);
   }
+  // console.log(currentImage);
 
   function handleSend() {
     setLoading(true);
@@ -30,15 +37,16 @@ export default function NewPost() {
         console.log("not submit");
         setLoading(false);
       });
-    // .then((r) => r.json())
-    // .then((r) => console.log("this =>", r));
   }
+
+  useEffect(() => {}, [refresh]);
 
   return (
     <div>
       <div>
         <input
           className=" bg-orange-400 w-screen"
+          onClick={() => setCurrentImage([])}
           type="file"
           name=""
           accept="image/*"
@@ -46,16 +54,24 @@ export default function NewPost() {
           onChange={handleImage}
         />
       </div>
-      <div>
-        <img src={currentImage} alt="none-img-:/" />
-      </div>
       {loading ? (
-        <div className=" w-fit mx-auto my-8">
-          <MoonLoader size={78} />
-        </div>
+        <MoonLoader size={85} />
       ) : (
-        <div className="bg-indigo-600 py-2 px-3 w-fit mx-auto text-8xl font-mono text-white mt-3 rounded-md hover:bg-indigo-400">
-          <button onClick={handleSend}>Save</button>
+        <div>
+          <div>
+            {currentImage.map((aImage, index) => (
+              <img key={index} src={aImage} alt="none-img-:/" />
+            ))}
+          </div>
+          {loading ? (
+            <div className=" w-fit mx-auto my-8">
+              <MoonLoader size={78} />
+            </div>
+          ) : (
+            <div className="bg-indigo-600 py-2 px-3 w-fit mx-auto text-8xl font-mono text-white mt-3 rounded-md hover:bg-indigo-400">
+              <button onClick={handleSend}>Save</button>
+            </div>
+          )}
         </div>
       )}
     </div>

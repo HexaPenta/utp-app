@@ -35,7 +35,7 @@ export default function IsLove({ love, idUser, idPost }) {
     );
 
   return (
-    <button onClick={handleLove} className=" text-4xl h-14">
+    <button onClick={handleLove} className=" text-4xl h-14 pl-4">
       {newLove ? "❤️" : "🤍"}
       {mustBeRegistered ? (
         <span className=" text-red-700 text-base">
