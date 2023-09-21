@@ -13,7 +13,6 @@ export default function PostMain({ params }) {
     `/post/posts/api?idUser=${idUser}&category=${params.category}`,
     (path) => fetch(path).then((r) => r.json())
   );
-  console.log(data);
 
   if (error) return <div>failed to load</div>;
   if (isLoading)
@@ -37,40 +36,41 @@ export default function PostMain({ params }) {
         </div>
       </div>
     );
+  if (data.length)
+    return (
+      <div>
+        {data.map((value, index) => {
+          let love = false;
+          if (value.postDetail.length) {
+            love = value.postDetail[0].iLove;
+          } else {
+            love = false;
+          }
+          return (
+            <div
+              key={index}
+              className=" rounded-lg shadow-md mb-4 box-border pt-3.5 pb-5 px-0.5 mt-6 dark:bg-slate-100 overflow-auto"
+            >
+              <h1 className="text-gray-900 font-bold font-sans text-xl pl-5 mb-5">
+                {value.title}
+              </h1>
 
-  return (
-    <div>
-      {data.map((value, index) => {
-        let love = false;
-        if (value.postDetail.length) {
-          love = value.postDetail[0].iLove;
-        } else {
-          love = false;
-        }
-        return (
-          <div
-            key={index}
-            className=" rounded-lg shadow-md mb-4 box-border pt-3.5 pb-5 px-0.5 mt-6 dark:bg-slate-100 overflow-auto"
-          >
-            <h1 className="text-gray-900 font-bold font-sans text-xl pl-5 mb-5">
-              {value.title}
-            </h1>
-
-            <div className=" overflow-auto flex gap-6 snap-x snap-mandatory">
-              {value.image?.map((aImage, i_Index) => (
-                <img
-                  className=" snap-center rounded-md mx-auto"
-                  key={i_Index}
-                  src={aImage}
-                  alt="none-chargued_:/"
-                />
-              ))}
+              <div className=" overflow-auto flex gap-6 snap-x snap-mandatory">
+                {typeof value.image === "object" &&
+                  value.image?.map((aImage, i_Index) => (
+                    <img
+                      className=" snap-center rounded-md mx-auto"
+                      key={i_Index}
+                      src={aImage}
+                      alt="none-chargued_:/"
+                    />
+                  ))}
+              </div>
+              <h2 className=" my-4 pl-4">{value.description}</h2>
+              <IsLove love={love} idUser={idUser} idPost={value.id} />
             </div>
-            <h2 className=" my-4 pl-4">{value.description}</h2>
-            <IsLove love={love} idUser={idUser} idPost={value.id} />
-          </div>
-        );
-      })}
-    </div>
-  );
+          );
+        })}
+      </div>
+    );
 }
