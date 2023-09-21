@@ -5,17 +5,17 @@ generator client {
   provider = "prisma-client-js"
 }
 
-datasource db {
-  provider = "postgresql"
-  // url      = env("DATABASE_URL")
-  url      = "postgresql://postgres:R52Cg9iZTCXgxehj73di@containers-us-west-142.railway.app:5660/railway"
-}
-
 // datasource db {
 //   provider = "postgresql"
-//   url = env("POSTGRES_PRISMA_URL") // uses connection pooling
-//   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+//   // url      = env("DATABASE_URL")
+//   url      = "postgresql://postgres:V2iIeKUX9FqidLFXUhNX@containers-us-west-139.railway.app:5887/railway"
 // }
+
+datasource db {
+  provider = "postgresql"
+  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+}
 
 // datasource db {
 //   provider = "sqlserver"
@@ -61,7 +61,7 @@ model Post {
   id          String       @id @default(uuid())
   title       String       @db.VarChar(50)
   description String       @db.VarChar(50)
-  image       Json     
+  image       Json?     
   postDetail  postDetail[]
   postScope   postScope?
 }
