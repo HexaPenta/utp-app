@@ -56,15 +56,14 @@ export default function PostMain({ params }) {
               </h1>
 
               <div className=" overflow-auto flex gap-6 snap-x snap-mandatory">
-                {typeof value.image === "object" &&
-                  value.image?.map((aImage, i_Index) => (
-                    <img
-                      className=" snap-center rounded-md mx-auto"
-                      key={i_Index}
-                      src={aImage}
-                      alt="none-chargued_:/"
-                    />
-                  ))}
+                {value.image?.map((aImage, i_Index) => (
+                  <img
+                    className=" snap-center rounded-md mx-auto"
+                    key={i_Index}
+                    src={aImage}
+                    alt="none-chargued_:/"
+                  />
+                ))}
               </div>
               <h2 className=" my-4 pl-4">{value.description}</h2>
               <IsLove love={love} idUser={idUser} idPost={value.id} />
