@@ -12,6 +12,9 @@ export async function POST(request) {
   } = postScope;
 
   await DataBaseInteraction.post.create({
+    include: {
+      postScope: true,
+    },
     data: {
       title,
       description,
@@ -28,4 +31,19 @@ export async function POST(request) {
   });
 
   return NextResponse.json({ okNewPost: true });
+  // return NextResponse.json({
+  //   data: {
+  //     title,
+  //     description,
+  //     image,
+  //     postScope: {
+  //       create: {
+  //         systemsEngineering,
+  //         civilEngineering,
+  //         industrialEngineering,
+  //         architecture,
+  //       },
+  //     },
+  //   },
+  // });
 }
