@@ -73,20 +73,21 @@ export default function NewPost() {
       method: "POST",
       body: JSON.stringify({ image: currentImage, data, postScope }),
     })
+      // .then((r) => r.json())
+      // .then((r) => console.log(r))
       .then(() => setLoading(false))
       .catch(() => {
         console.log("not submit");
         setLoading(false);
       });
   }
-  console.log(data);
   useEffect(() => {}, [refresh]);
 
   return (
-    <div className=" bg-gray-400">
+    <div className=" bg-slate-100">
       <div className="mx-auto  px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
         {/* <div className="mx-auto  max-w-2xl bg-white rounded-md p-11"> */}
-        <div className="mx-auto  max-w-2xl bg-red-600 rounded-md p-11">
+        <div className="mx-auto  max-w-2xl bg-white rounded-md p-11 shadow-xl">
           <div className="border-b border-gray-900/10 pb-12">
             <h2 className="text-base font-semibold leading-7 text-gray-900">
               New Post
