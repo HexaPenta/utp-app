@@ -5,17 +5,17 @@ generator client {
   provider = "prisma-client-js"
 }
 
-// datasource db {
-//   provider = "postgresql"
-//   // url      = env("DATABASE_URL")
-//   url      = "postgresql://postgres:FPNs2Et5L5vMvRKmCcUe@containers-us-west-209.railway.app:6974/railway"
-// }
-
 datasource db {
   provider = "postgresql"
-  url = env("POSTGRES_PRISMA_URL") // uses connection pooling
-  directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+  // url      = env("DATABASE_URL")
+  url      = "postgres://postgres:g164fA-CECa-ebfBC+*142E4G6E*gB6g@roundhouse.proxy.rlwy.net:31089/railway"
 }
+
+// datasource db {
+//   provider = "postgresql"
+//   url = env("POSTGRES_PRISMA_URL") // uses connection pooling
+//   directUrl = env("POSTGRES_URL_NON_POOLING") // uses a direct connection
+// }
 
 // datasource db {
 //   provider = "sqlserver"
@@ -60,8 +60,8 @@ model postScope {
 model Post {
   id          String       @id @default(uuid())
   title       String       @db.VarChar(50)
-  description String      
-  image       Json?     
+  description String
+  image       Json?
   postDetail  postDetail[]
   postScope   postScope?
 }
@@ -70,11 +70,11 @@ model Post {
 model postDetail {
   // id     String   @id @default(uuid())
   idUser String
-  User   User    @relation(fields: [idUser], references: [id])
+  User   User     @relation(fields: [idUser], references: [id])
   idPost String
-  Post   Post    @relation(fields: [idPost], references: [id])
+  Post   Post     @relation(fields: [idPost], references: [id])
   iLove  Boolean?
   iLike  Boolean?
-  
-  @@id([idUser,idPost])
+
+  @@id([idUser, idPost])
 }
