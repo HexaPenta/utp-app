@@ -1,19 +1,19 @@
-import Features from "./components/c/components/features";
-// import FeaturesBlocks from "./components/c/components/features-blocks";
-import Hero from "./components/c/components/hero";
-// import Newsletter from "./components/c/components/newsletter";
+// import Features from "./components/c/components/features";
+// // import FeaturesBlocks from "./components/c/components/features-blocks";
+// import Hero from "./components/c/components/hero";
+// // import Newsletter from "./components/c/components/newsletter";
 
 export default function Landing() {
   return (
     <div className=" overflow-auto break-words">
-      {/* <img
+      <img
         src="https://www.utp.edu.pe/sites/default/files/styles/transformar_webp/public/hero-banner/Pieza-web-1702-x-692-px%20%281%29.jpg.webp?itok=E3z9flWq"
         width={100000}
         alt=""
-      />   */}
+      />
       <>
-        <Hero />
-        <Features />
+        {/* <Hero /> */}
+        {/* <Features /> */}
         {/* <FeaturesBlocks /> */}
         {/* <Testimonials /> */}
         {/* <Newsletter /> */}
