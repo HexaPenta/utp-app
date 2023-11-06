@@ -1,4 +1,4 @@
-import DataBaseInteraction from "/prisma/index.js";
+import DataBaseInteraction from "@/prisma";
 import { NextResponse } from "next/server";
 
 export async function GET() {
