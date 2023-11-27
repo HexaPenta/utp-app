@@ -28,8 +28,12 @@ export default function RootLayout({ children }) {
         <div className={!localStorage.idUser ? "hidden" : ""}>
           <IsLogin />
         </div> */}
-        <Navbar />
-        {children}
+        <div className=" flex">
+          <div>
+            <Navbar />
+          </div>
+          <div>{children}</div>
+        </div>
       </body>
     </html>
   );
