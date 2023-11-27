@@ -64,9 +64,9 @@ export default function Login() {
     }
   }
   return (
-    <div className=" bg-white">
+    <div className=" bg-blue-100/25 w-screen">
       <div className="mx-auto  px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div className="  mx-auto  max-w-2xl dark:bg-slate-100 rounded-md p-11">
+        <div className="  mx-auto  max-w-2xl bg-white rounded-md p-11">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -129,9 +129,9 @@ export default function Login() {
                     Access
                   </button>
                 </div>
-                <button className="text-right w-fit rounded bg-indigo-600 hover:bg-indigo-500 px-3 py-2 font-semibold text-sm text-white">
+                {/* <button className="text-right w-fit rounded bg-indigo-600 hover:bg-indigo-500 px-3 py-2 font-semibold text-sm text-white">
                   Login with google
-                </button>
+                </button> */}
                 {notFound ? (
                   <h3 className=" text-red-600 font-medium text-sm">
                     Error-User-not-found

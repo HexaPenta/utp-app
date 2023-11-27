@@ -34,7 +34,7 @@ export default function Navbar() {
   return (
     // <div className=" p-6 bg-purple-600">
     // <div className=" grid grid-cols-10 bg-indigo-100 gap-5 py-6 px-4 text-center overflow-auto">
-    <div className=" flex flex-col bg-indigo-200n gap-36 py-6 px-4 text-center overflow-auto bg-red-900">
+    <div className=" flex flex-col bg-rose-600  gap-28 py-6 px-4 text-center bg-transparentX">
       {/* <Link className=" box-border mr-96 grow" href="/"> */}
       {/* <Link className=" box-border mr-10 w-80" href="/">
         <img
@@ -49,7 +49,7 @@ export default function Navbar() {
       <div className=" w-28 h-5 bg-orange-400"></div>
       <div className=" w-28 h-5 bg-orange-400"></div> */}
       <Link
-        className=" bg-red-600 rounded col-span-1 col-end-7 text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border w-fit flex items-center text-end"
+        className=" rounded col-span-1 col-end-7 text-white hover:bg-white text-sm font-extrabold px-3 py-2 box-border w-fit flex items-center text-end"
         href="/"
       >
         {/* <div className=" mx-auto">Home</div> */}
@@ -66,7 +66,7 @@ export default function Navbar() {
         <div className=" mx-auto">About</div>
       </button> */}
       <Link
-        className=" bg-red-600 rounded col-span-1 text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border w-fit flex items-center"
+        className=" rounded col-span-1 text-white hover:bg-white text-sm font-extrabold px-3 py-2 box-border w-fit flex items-center"
         href="/post/posts/all"
       >
         {/* <div className=" mx-auto">Posts</div> */}
@@ -80,13 +80,29 @@ export default function Navbar() {
         </svg>
       </Link>
 
+      <Link
+        className=" rounded col-span-1 text-white hover:bg-white text-sm font-extrabold px-3 py-2 box-border w-fit flex items-center"
+        href="/post/form"
+      >
+        {/* <div className=" mx-auto">Add post</div> */}
+
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          height="24"
+          viewBox="0 -960 960 960"
+          width="24"
+        >
+          <path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h360v80H200v560h560v-360h80v360q0 33-23.5 56.5T760-120H200Zm120-160v-80h320v80H320Zm0-120v-80h320v80H320Zm0-120v-80h320v80H320Zm360-80v-80h-80v-80h80v-80h80v80h80v80h-80v80h-80Z" />
+        </svg>
+      </Link>
+
       {/* <DynamicPart /> */}
 
       <Link
         className={
           idUser
             ? "hidden"
-            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border w-fit flex items-center"
+            : " rounded  text-white hover:bg-white text-sm font-extrabold px-3 py-2 box-border w-fit flex items-center"
         }
         href="/user/form/signIn"
       >
@@ -124,7 +140,7 @@ export default function Navbar() {
         className={
           idUser
             ? "hidden"
-            : " bg-red-600 rounded  text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border w-fit flex items-center"
+            : " rounded  text-white hover:bg-white text-sm font-extrabold px-3 py-2 box-border w-fit flex items-center"
         }
         href="/user/form/login"
       >
@@ -144,7 +160,7 @@ export default function Navbar() {
           !idUser
             ? "hidden"
             : // : " block bg-red-600 rounded  text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border"
-              " bg-red-600 rounded  text-white hover:bg-black text-sm font-extrabold px-3 py-2 box-border w-fit flex items-center"
+              " rounded  text-white hover:bg-white text-sm font-extrabold px-3 py-2 box-border w-fit flex items-center"
         }
         onClick={() => {
           localStorage.clear();

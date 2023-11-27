@@ -78,9 +78,9 @@ export default function SignInSuperUser() {
   }
 
   return (
-    <div className=" bg-white">
+    <div className=" bg-blue-100/25 w-screen ">
       <div className="mx-auto  px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div className="  mx-auto  max-w-2xl bg-slate-100 rounded-md p-11">
+        <div className="  mx-auto  max-w-2xl bg-white rounded-md p-11">
           <form
             className=""
             onSubmit={(e) => {

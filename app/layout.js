@@ -29,10 +29,10 @@ export default function RootLayout({ children }) {
           <IsLogin />
         </div> */}
         <div className=" flex">
-          <div>
-            <Navbar />
-          </div>
-          <div>{children}</div>
+          {/* <div className=" h-screen"> */}
+          <Navbar />
+          {/* </div> */}
+          <div className=" overflow-auto">{children}</div>
         </div>
       </body>
     </html>

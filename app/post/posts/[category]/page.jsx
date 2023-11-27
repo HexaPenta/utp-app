@@ -47,28 +47,27 @@ export default function PostMain({ params }) {
             love = false;
           }
           return (
-            // <div
-            //   key={index}
-            //   className=" rounded-lg shadow-md mb-4 box-border pt-3.5 pb-5 px-0.5 mt-6 dark:bg-slate-100 overflow-auto"
-            // >
-            //   <h1 className="text-gray-900 font-bold font-sans text-xl pl-5 mb-5">
-            //     {value.title}
-            //   </h1>
+            <div
+              key={index}
+              className=" rounded-lg shadow-md mb-4 box-border pt-3.5 pb-5 px-0.5 mt-6 dark:bg-slate-100 overflow-auto"
+            >
+              <h1 className="text-gray-900 font-bold font-sans text-xl pl-5 mb-5">
+                {value.title}
+              </h1>
 
-            //   <div className=" overflow-auto flex gap-6 snap-x snap-mandatory">
-            //     {value.image?.map((aImage, i_Index) => (
-            //       <img
-            //         className=" snap-center rounded-md mx-auto"
-            //         key={i_Index}
-            //         src={aImage}
-            //         alt="none-chargued_:/"
-            //       />
-            //     ))}
-            //   </div>
-            //   <h2 className=" my-4 pl-4">{value.description}</h2>
-            //   <IsLove love={love} idUser={idUser} idPost={value.id} />
-            // </div>
-            <div></div>
+              <div className=" overflow-auto flex gap-6 snap-x snap-mandatory">
+                {value.image?.map((aImage, i_Index) => (
+                  <img
+                    className=" snap-center rounded-md mx-auto"
+                    key={i_Index}
+                    src={aImage}
+                    alt="none-chargued_:/"
+                  />
+                ))}
+              </div>
+              <h2 className=" my-4 pl-4">{value.description}</h2>
+              <IsLove love={love} idUser={idUser} idPost={value.id} />
+            </div>
           );
         })}
       </div>
