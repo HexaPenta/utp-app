@@ -221,7 +221,7 @@ export default function NewPost() {
               </div>
               {loading ? (
                 <div className=" w-fit mx-auto my-8">
-                  <MoonLoader size={78} />
+                  <MoonLoader size={30} />
                 </div>
               ) : (
                 <div className="bg-rose-600 py-2 px-3 w-fit mx-auto text-2xl  font-mono text-white mt-3 rounded-md hover:bg-rose-400">
