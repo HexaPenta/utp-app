@@ -84,21 +84,21 @@ export default function NewPost() {
   useEffect(() => {}, [refresh]);
 
   return (
-    <div className=" bg-slate-100">
+    <div className=" bg-blue-100/25 w-screen">
       <div className="mx-auto  px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
         {/* <div className="mx-auto  max-w-2xl bg-white rounded-md p-11"> */}
         <div className="mx-auto  max-w-2xl bg-white rounded-md p-11 shadow-xl">
           <div className="border-b border-gray-900/10 pb-12">
             <h2 className="text-base font-semibold leading-7 text-gray-900">
-              New Post
+              Crear un nuevo posteo o noticia
             </h2>
             <p className="mt-1 text-sm leading-6 text-gray-600">
-              Complete the fields
+              Complete los campos
             </p>
             <div className="mt-10 grid grid-cols-6 gap-x-6 gap-y-8">
               <div className="col-span-4">
                 <label className="block text-sm font-medium leading-6 text-gray-900">
-                  Title
+                  Título
                 </label>
                 <div className="mt-2">
                   <input
@@ -114,7 +114,7 @@ export default function NewPost() {
 
               <div className=" col-span-6">
                 <label className="block text-sm font-medium leading-6 text-gray-900">
-                  Description
+                  Descripción
                 </label>
                 <div className=" mt-2">
                   <textarea
@@ -132,7 +132,7 @@ export default function NewPost() {
                 Visible para
               </p>
               <div>
-                <label htmlFor="">architecture</label>
+                <label htmlFor="">Arquitectura</label>
                 <div>
                   <input
                     type="checkbox"
@@ -144,7 +144,7 @@ export default function NewPost() {
               </div>
 
               <div>
-                <label htmlFor="">industrialEngineering</label>
+                <label htmlFor="">Ingenría indistrial</label>
                 <div>
                   <input
                     type="checkbox"
@@ -156,7 +156,7 @@ export default function NewPost() {
               </div>
 
               <div>
-                <label htmlFor="">systemsEngineering</label>
+                <label htmlFor="">Ingenría de sisetmas en informática</label>
                 <div>
                   <input
                     type="checkbox"
@@ -168,7 +168,7 @@ export default function NewPost() {
               </div>
 
               <div>
-                <label htmlFor="">civilEngineering</label>
+                <label htmlFor="">Ingenría civil</label>
                 <div>
                   <input
                     type="checkbox"
@@ -180,7 +180,7 @@ export default function NewPost() {
               </div>
 
               <div>
-                <label htmlFor="">All</label>
+                <label htmlFor="">Para todos</label>
                 <div>
                   <input
                     type="checkbox"
@@ -221,11 +221,11 @@ export default function NewPost() {
               </div>
               {loading ? (
                 <div className=" w-fit mx-auto my-8">
-                  <MoonLoader size={78} />
+                  <MoonLoader size={30} />
                 </div>
               ) : (
-                <div className="bg-indigo-600 py-2 px-3 w-fit mx-auto text-8xl font-mono text-white mt-3 rounded-md hover:bg-indigo-400">
-                  <button onClick={handleSend}>Save</button>
+                <div className="bg-rose-600 py-2 px-3 w-fit mx-auto text-2xl  font-mono text-white mt-3 rounded-md hover:bg-rose-400">
+                  <button onClick={handleSend}>Publicar</button>
                 </div>
               )}
             </div>

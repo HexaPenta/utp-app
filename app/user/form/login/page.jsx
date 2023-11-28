@@ -64,9 +64,9 @@ export default function Login() {
     }
   }
   return (
-    <div className=" bg-white">
+    <div className=" bg-blue-100/25 w-screen">
       <div className="mx-auto  px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div className="  mx-auto  max-w-2xl dark:bg-slate-100 rounded-md p-11">
+        <div className="  mx-auto  max-w-2xl bg-white rounded-md p-11">
           <form
             onSubmit={(e) => {
               e.preventDefault();
@@ -74,15 +74,15 @@ export default function Login() {
           >
             <div className="border-b border-gray-900/10 pb-12 ">
               <h2 className="text-base font-semibold leading-7 text-gray-900">
-                Login
+                Ingresar
               </h2>
               <p className="mt-1 text-sm leading-6 text-gray-600">
-                Login with a email and password
+                Ingresa con un correo y contraseña
               </p>
               <div className="mt-10 grid grid-cols-6 gap-x-6 gap-y-8 ">
                 <div className=" col-span-4">
                   <label className="block text-sm font-medium leading-6 text-gray-900">
-                    email
+                    Correo
                   </label>
                   <div className=" mt-2">
                     <input
@@ -97,7 +97,7 @@ export default function Login() {
 
                 <div className=" col-span-4 ">
                   <label className="block text-sm font-medium leading-6 text-gray-900">
-                    password
+                    Contraseña
                   </label>
                   <div className=" mt-2">
                     <input
@@ -119,22 +119,22 @@ export default function Login() {
                     className=" font-semibold text-sm text-gray-800 py-2"
                     href="/post/posts/all"
                   >
-                    Cancel
+                    Cancelar
                   </Link>
 
                   <button
-                    className="text-right w-fit rounded bg-indigo-600 hover:bg-indigo-500 px-3 py-2 font-semibold text-sm text-white"
+                    className="text-right w-fit rounded bg-rose-600 hover:bg-rose-500 px-3 py-2 font-semibold text-sm text-white"
                     onClick={handleSubmit}
                   >
-                    Access
+                    Ingresar
                   </button>
                 </div>
-                <button className="text-right w-fit rounded bg-indigo-600 hover:bg-indigo-500 px-3 py-2 font-semibold text-sm text-white">
+                {/* <button className="text-right w-fit rounded bg-indigo-600 hover:bg-indigo-500 px-3 py-2 font-semibold text-sm text-white">
                   Login with google
-                </button>
+                </button> */}
                 {notFound ? (
                   <h3 className=" text-red-600 font-medium text-sm">
-                    Error-User-not-found
+                    El usuario no existe
                   </h3>
                 ) : null}
               </div>

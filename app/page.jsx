@@ -1,23 +1,11 @@
-// import Features from "./components/c/components/features";
-// // import FeaturesBlocks from "./components/c/components/features-blocks";
-// import Hero from "./components/c/components/hero";
-// // import Newsletter from "./components/c/components/newsletter";
-
 export default function Landing() {
   return (
     <div className=" overflow-auto break-words">
       <img
-        src="https://www.utp.edu.pe/sites/default/files/styles/transformar_webp/public/hero-banner/Pieza-web-1702-x-692-px%20%281%29.jpg.webp?itok=E3z9flWq"
+        src="https://i.ytimg.com/vi/IfM3TpvN2Og/maxresdefault.jpg"
         width={100000}
         alt=""
       />
-      <>
-        {/* <Hero /> */}
-        {/* <Features /> */}
-        {/* <FeaturesBlocks /> */}
-        {/* <Testimonials /> */}
-        {/* <Newsletter /> */}
-      </>
       <div className=" bg-rose-600 h-6"></div>
       <footer className=" bg-black py-14 px-16 text-white">
         <div className=" mx-auto max-w-7xl border-b border-gray-500 max-md:flex-col max-md:items-center flex max-md:text-xs">
