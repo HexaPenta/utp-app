@@ -9,8 +9,8 @@ import Navbar from "./components/navbar/neutro/navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Wilson utp app",
-  description: "utp app wilson collantes aponte posts",
+  title: "UTP Post",
+  description: "utp app Richard Alexander Alonso posts",
 };
 
 export default function RootLayout({ children }) {
@@ -28,8 +28,12 @@ export default function RootLayout({ children }) {
         <div className={!localStorage.idUser ? "hidden" : ""}>
           <IsLogin />
         </div> */}
-        <Navbar />
-        {children}
+        <div className=" flex">
+          {/* <div className=" h-screen"> */}
+          <Navbar />
+          {/* </div> */}
+          <div className=" overflow-auto">{children}</div>
+        </div>
       </body>
     </html>
   );

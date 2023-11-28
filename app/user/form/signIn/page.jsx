@@ -78,9 +78,9 @@ export default function SignInSuperUser() {
   }
 
   return (
-    <div className=" bg-white">
+    <div className=" bg-blue-100/25 w-screen ">
       <div className="mx-auto  px-4 py-24 sm:px-6 sm:py-32 lg:px-8">
-        <div className="  mx-auto  max-w-2xl bg-slate-100 rounded-md p-11">
+        <div className="  mx-auto  max-w-2xl bg-white rounded-md p-11">
           <form
             className=""
             onSubmit={(e) => {
@@ -89,15 +89,15 @@ export default function SignInSuperUser() {
           >
             <div className="border-b border-gray-900/10 pb-12">
               <h2 className="text-base font-semibold leading-7 text-gray-900">
-                Register a new user
+                Registrar un nuevo usuario
               </h2>
               <p className="mt-1 text-sm leading-6 text-gray-600">
-                All fields are required
+                Son requeridos todos los campos
               </p>
               <div className="mt-10 grid grid-cols-6 gap-x-6 gap-y-8">
                 <div className="col-span-3">
                   <label className="block text-sm font-medium leading-6 text-gray-900">
-                    name
+                    Nombre
                   </label>
                   <div className="mt-2">
                     <input
@@ -118,7 +118,7 @@ export default function SignInSuperUser() {
 
                 <div className=" col-span-3">
                   <label className="block text-sm font-medium leading-6 text-gray-900">
-                    surname
+                    Apellido
                   </label>
                   <div className=" mt-2">
                     <input
@@ -139,7 +139,7 @@ export default function SignInSuperUser() {
 
                 <div className=" col-span-4">
                   <label className="block text-sm font-medium leading-6 text-gray-900">
-                    email
+                    Correo
                   </label>
                   <div className=" mt-2">
                     <input
@@ -160,7 +160,7 @@ export default function SignInSuperUser() {
 
                 <div className=" col-span-3 ">
                   <label className="block text-sm font-medium leading-6 text-gray-900">
-                    password
+                    Contraseña
                   </label>
                   <div className=" mt-2">
                     <input
@@ -181,7 +181,7 @@ export default function SignInSuperUser() {
 
                 <div className=" col-span-3 ">
                   <label className="block text-sm font-medium leading-6 text-gray-900">
-                    repeatPassword
+                    Repita su Contraseña
                   </label>
                   <div className=" mt-2">
                     <input
@@ -202,7 +202,7 @@ export default function SignInSuperUser() {
 
                 <div className=" col-span-2">
                   <label className="block text-sm font-medium leading-6 text-gray-900">
-                    headquarter
+                    Sede
                   </label>
                   <div className=" mt-2">
                     <select
@@ -297,7 +297,7 @@ export default function SignInSuperUser() {
 
                 <div className=" col-span-2">
                   <label className="block text-sm font-medium leading-6 text-gray-900">
-                    cycle
+                    Ciclo
                   </label>
                   <div className=" mt-2">
                     <select
@@ -350,7 +350,7 @@ export default function SignInSuperUser() {
 
                 <div className=" col-span-2">
                   <label className="block text-sm font-medium leading-6 text-gray-900">
-                    carrer
+                    Carrera
                   </label>
                   <div className=" mt-2">
                     <input
@@ -377,14 +377,14 @@ export default function SignInSuperUser() {
                   className="text-sm font-semibold leading-6 text-gray-900"
                   href="/post/posts/all"
                 >
-                  Cancel
+                  Cancelar
                 </Link>
                 <button
-                  className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white  hover:bg-indigo-500 disabled:bg-indigo-200"
+                  className="rounded-md bg-rose-600 px-3 py-2 text-sm font-semibold text-white  hover:bg-rose-500 disabled:bg-indigo-200"
                   name="save"
                   onClick={handleSave}
                 >
-                  Save
+                  Guardar
                 </button>
               </div>
             ) : (
