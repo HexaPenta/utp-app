@@ -4,8 +4,8 @@ import useSWR from "swr";
 import IsLove from "../components/changeLove/isLove";
 
 export default function PostMain({ params }) {
-  console.log(params);
-
+  // console.log(params);
+  localStorage.setItem("carrer", params.category);
   const idUser =
     typeof window !== "undefined" ? localStorage.getItem("idUser") : null;
 
