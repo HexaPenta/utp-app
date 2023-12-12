@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 
-export default function PostLayout({ children, params }) {
+export default function PostLayout({ children }) {
   return (
     <div>
       <div className=" overflow-auto">
@@ -42,7 +42,7 @@ export default function PostLayout({ children, params }) {
         </div>
       </div>
 
-      {window !== undefined && (
+      {typeof window !== undefined && (
         <div
           className={`flex max-w-full px-4 overflow-auto justify-center ${
             location.pathname.split("/")[3] === "systemsEngineering"
