@@ -45,13 +45,14 @@ export default function PostLayout({ children }) {
       {typeof window !== undefined && (
         <div
           className={`flex max-w-full px-4 overflow-auto justify-center ${
-            location.pathname.split("/")[3] === "systemsEngineering"
+            window.location.pathname.split("/")[3] === "systemsEngineering"
               ? "bg-systemsEngineering"
-              : location.pathname.split("/")[3] === "industrialEngineering"
+              : window.location.pathname.split("/")[3] ===
+                "industrialEngineering"
               ? "bg-industrialEngineering"
-              : location.pathname.split("/")[3] === "civilEngineering"
+              : window.location.pathname.split("/")[3] === "civilEngineering"
               ? "bg-civilEngineering"
-              : location.pathname.split("/")[3] === "architecture"
+              : window.location.pathname.split("/")[3] === "architecture"
               ? "bg-architecture"
               : "bg-all"
           }
