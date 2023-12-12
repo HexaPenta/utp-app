@@ -1,7 +1,15 @@
 "use client";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function PostLayout({ children }) {
+  const [carrer, setCarrer] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== undefined)
+      setCarrer(window.location.pathname.split("/")[3]);
+  }, []);
+
   return (
     <div>
       <div className=" overflow-auto">
@@ -45,14 +53,13 @@ export default function PostLayout({ children }) {
       {typeof window !== undefined && (
         <div
           className={`flex max-w-full px-4 overflow-auto justify-center ${
-            window.location.pathname.split("/")[3] === "systemsEngineering"
+            carrer === "systemsEngineering"
               ? "bg-systemsEngineering"
-              : window.location.pathname.split("/")[3] ===
-                "industrialEngineering"
+              : carrer === "industrialEngineering"
               ? "bg-industrialEngineering"
-              : window.location.pathname.split("/")[3] === "civilEngineering"
+              : carrer === "civilEngineering"
               ? "bg-civilEngineering"
-              : window.location.pathname.split("/")[3] === "architecture"
+              : carrer === "architecture"
               ? "bg-architecture"
               : "bg-all"
           }
