@@ -42,24 +42,26 @@ export default function PostLayout({ children, params }) {
         </div>
       </div>
 
-      <div
-        className={`flex max-w-full px-4 overflow-auto justify-center ${
-          location.pathname.split("/")[3] === "systemsEngineering"
-            ? "bg-systemsEngineering"
-            : location.pathname.split("/")[3] === "industrialEngineering"
-            ? "bg-industrialEngineering"
-            : location.pathname.split("/")[3] === "civilEngineering"
-            ? "bg-civilEngineering"
-            : location.pathname.split("/")[3] === "architecture"
-            ? "bg-architecture"
-            : "bg-all"
-        }
+      {window !== undefined && (
+        <div
+          className={`flex max-w-full px-4 overflow-auto justify-center ${
+            location.pathname.split("/")[3] === "systemsEngineering"
+              ? "bg-systemsEngineering"
+              : location.pathname.split("/")[3] === "industrialEngineering"
+              ? "bg-industrialEngineering"
+              : location.pathname.split("/")[3] === "civilEngineering"
+              ? "bg-civilEngineering"
+              : location.pathname.split("/")[3] === "architecture"
+              ? "bg-architecture"
+              : "bg-all"
+          }
         bg-cover bg-no-repeat bg-fixed`}
-      >
-        <div className=" w-1/2 p-4 pt-0 overflow-auto max-md:w-auto">
-          {children}
+        >
+          <div className=" w-1/2 p-4 pt-0 overflow-auto max-md:w-auto">
+            {children}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 }
