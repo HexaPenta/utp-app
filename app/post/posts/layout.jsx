@@ -49,7 +49,7 @@ export default function PostLayout({ children }) {
         </div>
       </div>
 
-      <div className={`flex max-w-full px-4 overflow-auto justify-center bg`}>
+      <div className={`flex max-w-full px-4 overflow-auto justify-center`}>
         <div className=" w-1/2 p-4 pt-0 overflow-auto max-md:w-auto">
           {children}
         </div>
