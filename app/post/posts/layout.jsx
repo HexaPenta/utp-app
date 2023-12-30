@@ -49,26 +49,11 @@ export default function PostLayout({ children }) {
         </div>
       </div>
 
-      {typeof window !== undefined && (
-        <div
-          className={`flex max-w-full px-4 overflow-auto justify-center ${
-            carrer === "systemsEngineering"
-              ? "bg-systemsEngineering"
-              : carrer === "industrialEngineering"
-              ? "bg-industrialEngineering"
-              : carrer === "civilEngineering"
-              ? "bg-civilEngineering"
-              : carrer === "architecture"
-              ? "bg-architecture"
-              : "bg-all"
-          }
-        bg-cover bg-no-repeat bg-fixed`}
-        >
-          <div className=" w-1/2 p-4 pt-0 overflow-auto max-md:w-auto">
-            {children}
-          </div>
+      <div className={`flex max-w-full px-4 overflow-auto justify-center`}>
+        <div className=" w-1/2 p-4 pt-0 overflow-auto max-md:w-auto">
+          {children}
         </div>
-      )}
+      </div>
     </div>
   );
 }
