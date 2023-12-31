@@ -32,18 +32,17 @@ export async function POST(request) {
     },
   });
 
+  const toResponse = { okNewPost: true };
+
   // return NextResponse.json({ okNewPost: true });
-  return Response.json(
-    { okNewPost: true },
-    {
-      status: 200,
-      headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-        "Access-Control-Allow-Headers": "Content-Type, Authorization",
-      },
-    }
-  );
+  return Response.json(toResponse, {
+    status: 200,
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Authorization",
+    },
+  });
   // return NextResponse.json({
   //   data: {
   //     title,
