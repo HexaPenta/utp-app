@@ -21,6 +21,7 @@ const nextConfig = {
       },
     ];
   },
+  crossOrigin: "anonymous",
 };
 
 module.exports = nextConfig;
