@@ -1,5 +1,5 @@
 import DataBaseInteraction from "@/prisma";
-import { NextResponse } from "next/server";
+// import { NextResponse } from "next/server";
 
 export async function POST(request) {
   const { image, data, postScope } = await request.json();
