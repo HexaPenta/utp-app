@@ -21,7 +21,7 @@ const nextConfig = {
       },
     ];
   },
-  crossOrigin: "anonymous",
+  crossOrigin: "http://localhost:8081",
 };
 
 module.exports = nextConfig;
