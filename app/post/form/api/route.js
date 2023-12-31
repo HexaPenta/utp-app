@@ -1,5 +1,5 @@
 import DataBaseInteraction from "@/prisma";
-import { NextResponse } from "next/server";
+// import { NextResponse } from "next/server";
 
 export async function POST(request) {
   const { image, data, postScope } = await request.json();
@@ -30,7 +30,18 @@ export async function POST(request) {
     },
   });
 
-  return NextResponse.json({ okNewPost: true });
+  // return NextResponse.json({ okNewPost: true });
+  return Response.json(
+    { okNewPost: true },
+    {
+      status: 200,
+      headers: {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+        "Access-Control-Allow-Headers": "Content-Type, Authorization",
+      },
+    }
+  );
   // return NextResponse.json({
   //   data: {
   //     title,
