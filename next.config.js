@@ -21,7 +21,7 @@ const nextConfig = {
       },
     ];
   },
-  crossOrigin: "http://localhost:8081",
+  crossOrigin: "use-credentials",
 };
 
 module.exports = nextConfig;
