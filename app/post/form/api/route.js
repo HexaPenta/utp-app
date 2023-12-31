@@ -1,4 +1,4 @@
-export const dynamic = "force-dynamic"; // defaults to auto
+export const dynamic = "edge"; // defaults to auto
 
 import DataBaseInteraction from "@/prisma";
 // import { NextResponse } from "next/server";
