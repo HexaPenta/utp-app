@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
           {/* <div className=" h-screen"> */}
           <Navbar />
           {/* </div> */}
-          <div className=" overflow-auto">{children}</div>
+          <div className=" overflow-auto grow">{children}</div>
         </div>
       </body>
     </html>

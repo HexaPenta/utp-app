@@ -18,12 +18,12 @@ export default function PostMain({ params }) {
   if (isLoading)
     return (
       <div>
-        <div className=" grid grid-cols-6 animate-pulse gap-y-6 gap-x-3 p-4">
+        <div className=" grid grid-cols-6 animate-pulse gap-y-6 gap-x-3 py-1">
           <div className="h-4 bg-slate-400/70 rounded-lg col-span-full     "></div>
           <div className="h-4 bg-slate-400/70 rounded-lg col-span-5     "></div>
           <div className="h-4 bg-slate-400/70 rounded-lg col-span-4     "></div>
           <div className="h-4 bg-slate-400/70 rounded-lg col-span-2     "></div>
-          <div className="h-40 bg-slate-400/70 rounded-lg col-span-4 col-start-2    "></div>
+          <div className="h-40 bg-slate-400/70 rounded-lg col-span-full sm:col-span-4 sm:col-start-2"></div>
           <div className="h-16 bg-slate-400/70 rounded-full col-start-1 w-16    "></div>
         </div>
         <div className=" grid grid-cols-6 animate-pulse gap-y-6 gap-x-3 py-1">
@@ -31,7 +31,7 @@ export default function PostMain({ params }) {
           <div className="h-4 bg-slate-400/70 rounded-lg col-span-5     "></div>
           <div className="h-4 bg-slate-400/70 rounded-lg col-span-4     "></div>
           <div className="h-4 bg-slate-400/70 rounded-lg col-span-2     "></div>
-          <div className="h-40 bg-slate-400/70 rounded-lg col-span-4 col-start-2    "></div>
+          <div className="h-40 bg-slate-400/70 rounded-lg col-span-full sm:col-span-4 sm:col-start-2"></div>
           <div className="h-16 bg-slate-400/70 rounded-full col-start-1 w-16    "></div>
         </div>
       </div>
