@@ -66,7 +66,9 @@ export default function PostMain({ params }) {
                 ))}
               </div>
               <h2 className=" my-4 pl-4">{value.description}</h2>
-              <IsLove love={love} idUser={idUser} idPost={value.id} />
+              <div className="mb-3">
+                <IsLove love={love} idUser={idUser} idPost={value.id} />
+              </div>
             </div>
           );
         })}

@@ -35,10 +35,13 @@ export default function IsLove({ love, idUser, idPost }) {
     );
 
   return (
-    <button onClick={handleLove} className=" text-4xl h-14 pl-4">
+    <button
+      onClick={handleLove}
+      className=" text-4xl h-14 pl-4 flex items-center"
+    >
       {newLove ? "❤️" : "🤍"}
       {mustBeRegistered ? (
-        <span className=" text-red-700 text-base">
+        <span className=" text-red-700 text-base break-all text-pretty">
           Debes estar logueado para reaccionar
         </span>
       ) : null}
