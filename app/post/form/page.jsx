@@ -76,8 +76,8 @@ export default function NewPost() {
       // .then((r) => r.json())
       // .then((r) => console.log(r))
       .then(() => setLoading(false))
-      .catch(() => {
-        console.log("not submit");
+      .catch((err) => {
+        console.log(err);
         setLoading(false);
       });
   }
