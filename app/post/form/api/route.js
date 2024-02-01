@@ -1,4 +1,4 @@
-export const dynamic = "edge"; // defaults to auto
+// export const dynamic = "edge"; // defaults to auto
 
 // import DataBaseInteraction from "@/prisma";
 import { v2 as cloudinary } from "cloudinary";
