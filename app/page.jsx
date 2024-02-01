@@ -7,9 +7,13 @@ export default function Landing() {
         alt=""
       />
       <div className=" bg-rose-600 h-6"></div>
-      <footer className=" bg-black py-14 px-16 text-white">
-        <div className=" mx-auto max-w-7xl border-b border-gray-500 max-md:flex-col max-md:items-center flex max-md:text-xs">
-          <div className=" w-2/5">
+      <footer className=" bg-black py-14 px-16X text-white">
+        <div
+          className="mx-auto sm:max-w-7xl border-b border-gray-500 
+       flex flex-col sm:flex-row flex-wrap justify-center sm:justify-around 
+        "
+        >
+          <div className="px-2 sm:w-2/5">
             <h2 className=" font-medium text-3xl">Nuestro campus</h2>
             <div className=" flex flex-wrap gap-x-4 gap-y-5 mt-3">
               <a href="" className=" underline-offset-2 underline">
@@ -50,7 +54,8 @@ export default function Landing() {
               </a>
             </div>
           </div>
-          <div className=" w-1/3 pl-4 mb-20">
+
+          <div className="sm:w-1/3 pl-4 mb-20">
             <h2 className=" font-medium text-3xl mb-6 max-md:mt-6">
               Contáctanos
             </h2>
@@ -156,7 +161,7 @@ export default function Landing() {
               </a>
             </p>
           </div>
-          <div className=" w-fit pl-20 py-10 mb-20">
+          <div className="px-2 w-fitX sm:pl-20 py-10 mb-20">
             <div className=" flex ">
               <svg
                 fill="none"
@@ -318,7 +323,7 @@ export default function Landing() {
             </div>
           </div>
         </div>
-        <ul className=" max-md:flex-col max-md:w-fit flex gap-8 gap-x-6 py-4 mx-auto max-w-7xl mt-10">
+        <ul className="px-2 max-md:flex-col max-md:w-fit flex gap-8 gap-x-6 py-4 mx-auto max-w-7xl mt-10">
           <li className=" bg-slate-300 py-3 px-5 rounded-full">
             <a href="https://www.facebook.com/UTP.Peru/" target="_blank">
               <svg
