@@ -1,5 +1,6 @@
-import DataBaseInteraction from "@/prisma";
+// import DataBaseInteraction from "@/prisma";
 import { NextResponse } from "next/server";
+import DataBaseInteraction from "../../../../../../prisma";
 
 export async function PUT(req) {
   const { newLove, idUser, idPost } = await req.json();

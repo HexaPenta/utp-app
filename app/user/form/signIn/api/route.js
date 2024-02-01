@@ -1,5 +1,6 @@
-import DataBaseInteraction from "@/prisma";
+// import DataBaseInteraction from "@/prisma";
 import { NextResponse } from "next/server";
+import DataBaseInteraction from "../../../../../prisma";
 
 export async function POST(r) {
   //   const email = r.nextUrl.searchParams.get("email");
