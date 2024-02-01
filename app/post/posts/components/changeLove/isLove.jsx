@@ -41,8 +41,8 @@ export default function IsLove({ love, idUser, idPost }) {
     >
       {newLove ? "❤️" : "🤍"}
       {mustBeRegistered ? (
-        <span className=" text-red-700 text-base break-all text-pretty">
-          Debes estar logueado para reaccionar
+        <span className="ml-2 text-red-700 text-base break-all text-pretty">
+          Debes estar logueado <br /> para reaccionar
         </span>
       ) : null}
     </button>
