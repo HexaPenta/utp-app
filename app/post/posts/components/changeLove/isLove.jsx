@@ -18,7 +18,7 @@ export default function IsLove({ love, idUser, idPost }) {
       })
         .then((r) => r.json())
         .catch(() => false);
-      console.log(res);
+      // console.log(res);
       setNewLove(res);
     } else {
       setMustBeRegistered(true);
